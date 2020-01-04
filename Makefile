@@ -47,7 +47,7 @@ $(OBJDIR)/%.o : $(CURDIR)/%.c | $$(@D)/.DIR
 	$(CC) $(CFLAGS) -c -o $@ $(abspath $<) $(LDLIBS)
 
 $(OBJDIR)/% : tests/%.c | $$(@D)/.DIR
-	$(CC) -o $@ $(abspath $<) $(LDLIBS)
+	$(CC) $(CFLAGS) -o $@ $(abspath $<) $(LDLIBS)
 
 # Solution code
 utils.c    := $(sort $(wildcard utils/*.c))
@@ -58,7 +58,7 @@ problems.o  = $(problems.c:%.c=$(OBJDIR)/%.o)
 # Tests
 tests.c    := $(sort $(wildcard tests/*.c))
 tests       = $(tests.c:tests/%.c=$(OBJDIR)/%)
-$(tests): $(utils.o) $(problems.o)
+$(tests) : $(utils.o) $(problems.o)
 
 # Driver code
 euler.c    := euler.c
@@ -79,11 +79,11 @@ test: tests
 # Style
 style:
 	@astyle --options=.astylerc \
-          $(wildcard include/*.h tests/*.[ch] problems/*.c utils/*.c)
+          $(wildcard euler.c include/*.h problems/*.c utils/*.c tests/*.[ch])
 
 # Clean
-clean:
+cln clean:
 	rm -f euler
 	rm -rf $(OBJDIR)/*
 
-.PHONY: clean style test
+.PHONY: cln clean style test
