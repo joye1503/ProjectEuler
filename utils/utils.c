@@ -22,11 +22,11 @@ int getUserInt(char *userPrompt, int *input) {
   // Get user input with given prompt
   printf(userPrompt);
   while (fgets(s, sizeof(s), stdin)) {
-      n = strtol(s, &p, 10);
-      // Check for integer
-      if (p == s || *p != '\n') {
-          printf(userPrompt);
-      } else break;
+    n = strtol(s, &p, 10);
+    // Check for integer
+    if (p == s || *p != '\n') {
+      printf(userPrompt);
+    } else break;
   }
 
   // Save user input

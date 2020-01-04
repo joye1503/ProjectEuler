@@ -12,7 +12,7 @@
   @param[in] b       Second integer
   @param[out] result GCD of a and b
 
-  @return  An error code: 0 - success, otherwise - failure  
+  @return  An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
 int calculateGCD(int a, int b, int *result) {

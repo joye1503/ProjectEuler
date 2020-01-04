@@ -42,9 +42,12 @@ output = $(if $(TERM:dumb=),$(call color_out,$1,$2),$(call emacs_out,$1,$2))
 
 .PRECIOUS: %/.DIR
 
-# .0 rule
+# .o rule
 $(OBJDIR)/%.o : $(CURDIR)/%.c | $$(@D)/.DIR
 	$(CC) $(CFLAGS) -c -o $@ $(abspath $<) $(LDLIBS)
+
+$(OBJDIR)/% : tests/%.c | $$(@D)/.DIR
+	$(CC) -o $@ $(abspath $<) $(LDLIBS)
 
 # Solution code
 utils.c    := $(sort $(wildcard utils/*.c))
@@ -54,7 +57,8 @@ problems.o  = $(problems.c:%.c=$(OBJDIR)/%.o)
 
 # Tests
 tests.c    := $(sort $(wildcard tests/*.c))
-tests.o     = $(tests.c:%.c=$(OBJDIR)/%.o)
+tests       = $(tests.c:tests/%.c=$(OBJDIR)/%)
+$(tests): $(utils.o) $(problems.o)
 
 # Driver code
 euler.c    := euler.c
@@ -63,17 +67,23 @@ euler.o     = $(euler.c:%.c=$(OBJDIR)/%.o)
 # Main
 euler: $(euler.o) $(utils.o) $(problems.o)
 	$(CC) -o $@ $^ $(CFLAGS)
+all: euler
 
-# Testingrun-% : $(OBJDIR)/%
-run-% : $(OBJDIR)/%
+# Testing
+run-%: $(OBJDIR)/%
 	@tests/tap.sh $(<:$(OBJDIR)/%=%)
 
-$(tests): $(tests.o) $(utils.o) $(problems.o)
+test: tests
+	$(tests:$(OBJDIR)/%=run-%)
 
-test: $(tests:$(OBJDIR)/%=run-%)
+# Style
+style:
+	@astyle --options=.astylerc \
+          $(wildcard include/*.h tests/*.[ch] problems/*.c utils/*.c)
 
 # Clean
 clean:
+	rm -f euler
 	rm -rf $(OBJDIR)/*
 
-.PHONY: clean test prove
+.PHONY: clean style test

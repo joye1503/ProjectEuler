@@ -22,7 +22,7 @@ int problem1(int a, int b, int limit, int *sum) {
 
   // Multiples of a
   for (int i=a; i<limit; i+=a)
-      *sum += i;
+    *sum += i;
 
   // Multiples of b
   for (int i=b; i<limit; i+=b)
