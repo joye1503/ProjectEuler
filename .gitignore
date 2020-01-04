@@ -1,0 +1,14 @@
+# Build Dir
+build/*
+
+# General
+*.DIR
+doc/html
+
+# Coverage
+*.gcno
+*.gcda
+*.gcov
+
+# Debugging
+vgcore*

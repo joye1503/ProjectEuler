@@ -2,11 +2,15 @@
 #define UTILS_H
 #include <stdio.h>
 
-// Utilites
+// -----------------------------------------------------------------------------
+// Interface utilites
+// -----------------------------------------------------------------------------
 int getUserInt(char *userPrompt, int *input);
 
+// -----------------------------------------------------------------------------
 // Math utilities
-int calculateGCD(int a, int b);
-int calculateLCM(int a, int b);
+// -----------------------------------------------------------------------------
+int calculateGCD(int a, int b, int *result);
+int calculateLCM(int a, int b, int *result);
 
 #endif

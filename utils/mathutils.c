@@ -1,26 +1,51 @@
 #include <stdio.h>
+/// @file
+/// Mathematical utilities
+///
+/// @addtogroup Math
+/// @{
+// -----------------------------------------------------------------------------
+/**
+  @brief Compute GCD of integers a and b
 
+  @param[in] a       First integer
+  @param[in] b       Second integer
+  @param[out] result GCD of a and b
+
+  @return  An error code: 0 - success, otherwise - failure  
+**/
 // -----------------------------------------------------------------------------
-// Math utilities
-// -----------------------------------------------------------------------------
-/* Compute GCD of integers a and b
-*/
-int calculateGCD(int a, int b) {
+int calculateGCD(int a, int b, int *result) {
   // Compute gcd
   if (b == 0)
-    return a;
+    *result = a;
   else
-    return calculateGCD(b, a % b);
-};
+    calculateGCD(b, a % b, result);
 
-/* Compute LCM of integers a and b
-*/
-int calculateLCM(int a, int b) {
+  return 0;
+};
+// -----------------------------------------------------------------------------
+/**
+  @brief Compute LCM of integers a and b
+
+  @param[in] a       First integer
+  @param[in] b       Second integer
+  @param[out] result LCM of a and b
+
+  @return  An error code: 0 - success, otherwise - failure
+**/
+// -----------------------------------------------------------------------------
+int calculateLCM(int a, int b, int *result) {
   // Compute gcd
-  int gcd = calculateGCD(a, b);
+  int gcd;
+  calculateGCD(a, b, &gcd);
 
   // Compute lcm
   int lcm = a * b / gcd;
 
-  return lcm;
+  *result = lcm;
+
+  return 0;
 };
+// -----------------------------------------------------------------------------
+/// @}

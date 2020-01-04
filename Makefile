@@ -1,3 +1,4 @@
+# Compiler options
 ifeq (,$(filter-out undefined default,$(origin CC)))
   CC = gcc
 endif
@@ -10,10 +11,10 @@ ifeq ($(UNDERSCORE), 1)
   CFLAGS += -DUNDERSCORE
 endif
 
+# Build directories
 OBJDIR := build
 INCDIR := include
 CFLAGS += -I$(INCDIR)
-LDLIBS = -lm
 
 # Output using the 216-color rules mode
 rule_file = $(notdir $(1))
@@ -32,6 +33,7 @@ output = $(if $(TERM:dumb=),$(call color_out,$1,$2),$(call emacs_out,$1,$2))
 # Cancel built-in and old-fashioned implicit rules which we don't use
 .SUFFIXES:
 
+# DIR expansion
 .SECONDEXPANSION: # to expand $$(@D)/.DIR
 
 %/.DIR :
@@ -40,6 +42,7 @@ output = $(if $(TERM:dumb=),$(call color_out,$1,$2),$(call emacs_out,$1,$2))
 
 .PRECIOUS: %/.DIR
 
+# .0 rule
 $(OBJDIR)/%.o : $(CURDIR)/%.c | $$(@D)/.DIR
 	$(CC) $(CFLAGS) -c -o $@ $(abspath $<) $(LDLIBS)
 
@@ -49,14 +52,28 @@ utils.o     = $(utils.c:%.c=$(OBJDIR)/%.o)
 problems.c := $(sort $(wildcard problems/*.c))
 problems.o  = $(problems.c:%.c=$(OBJDIR)/%.o)
 
+# Tests
+tests.c    := $(sort $(wildcard tests/*.c))
+tests.o     = $(tests.c:%.c=$(OBJDIR)/%.o)
+
 # Driver code
 euler.c    := euler.c
 euler.o     = $(euler.c:%.c=$(OBJDIR)/%.o)
 
+# Main
 euler: $(euler.o) $(utils.o) $(problems.o)
 	$(CC) -o $@ $^ $(CFLAGS)
 
-.PHONY: clean
+# Testingrun-% : $(OBJDIR)/%
+run-% : $(OBJDIR)/%
+	@tests/tap.sh $(<:$(OBJDIR)/%=%)
 
+$(tests): $(tests.o) $(utils.o) $(problems.o)
+
+test: $(tests:$(OBJDIR)/%=run-%)
+
+# Clean
 clean:
 	rm -rf $(OBJDIR)/*
+
+.PHONY: clean test prove

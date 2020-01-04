@@ -1,8 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/// @file
+/// Interface utilities
+///
+/// @addtogroup Utilities
+/// @{
 // -----------------------------------------------------------------------------
-// Utilites
+/**
+  @brief Get user input integer
+
+  @param[in] userPrompt Text for user prompt
+  @param[out] input     User input integer
+
+  @return  An error code: 0 - success, otherwise - failure
+**/
 // -----------------------------------------------------------------------------
 int getUserInt(char *userPrompt, int *input) {
   char *p, s[100];
@@ -23,3 +34,5 @@ int getUserInt(char *userPrompt, int *input) {
 
   return 0;
 };
+// -----------------------------------------------------------------------------
+/// @}
