@@ -81,9 +81,16 @@ style:
 	@astyle --options=.astylerc \
           $(wildcard euler.c include/*.h problems/*.c utils/*.c tests/*.[ch])
 
+CLANG_TIDY ?= clang-tidy
+allfiles.c := euler.c $(problems.c) $(utils.c) $(tests.c)
+%.c.tidy : %.c
+	$(CLANG_TIDY) $^ -- $(CPPFLAGS) --std=c99 -I$(INCDIR)
+
+tidy : $(allfiles.c:%=%.tidy)
+
 # Clean
 cln clean:
 	rm -f euler
 	rm -rf $(OBJDIR)/*
 
-.PHONY: cln clean style test
+.PHONY: cln clean style test tidy

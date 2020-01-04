@@ -57,7 +57,7 @@ int problem2CL(void) {
 
   // Get a, b, and limit
   printf("This code finds the sum of all Fibonacci numbers that are "
-         "multiples of [a] below [limit].\n");
+         "multiples of [a] below [limit].\n\n");
   getUserInt("Enter a: ", &a);
   getUserInt("Enter limit: ", &limit);
 

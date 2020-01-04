@@ -20,12 +20,12 @@ int getUserInt(char *userPrompt, int *input) {
   int n = 0;
 
   // Get user input with given prompt
-  printf(userPrompt);
+  printf("%s", userPrompt);
   while (fgets(s, sizeof(s), stdin)) {
     n = strtol(s, &p, 10);
     // Check for integer
     if (p == s || *p != '\n') {
-      printf(userPrompt);
+      printf("%s", userPrompt);
     } else break;
   }
 

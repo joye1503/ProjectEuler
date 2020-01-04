@@ -51,7 +51,7 @@ int problem1CL(void) {
 
   // Get a, b, and limit
   printf("This code finds the sum of all the multiples of [a] or [b]\n  below "
-         "[limit].\n");
+         "[limit].\n\n");
   getUserInt("Enter a: ", &a);
   getUserInt("Enter b: ", &b);
   getUserInt("Enter limit: ", &limit);
