@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 /// @file
 /// Interface utilities
 ///
@@ -31,6 +32,33 @@ int getUserInt(char *userPrompt, int *input) {
 
   // Save user input
   *input = n;
+
+  return 0;
+};
+// -----------------------------------------------------------------------------
+/**
+  @brief Get user input integer from a range
+
+  @param[in] userPrompt Text for user prompt
+  @param[in] lower      Lower end of range, inclusive
+  @param[in] upper      Upper end of range, inclusive
+  @param[out] input     User input integer
+
+  @return  An error code: 0 - success, otherwise - failure
+**/
+// -----------------------------------------------------------------------------
+int getValidUserInt(char *userPrompt, int lower, int upper, int *input) {
+  bool valid = false;
+
+  // Loop until valid
+  while (!valid) {
+    getUserInt(userPrompt, input);
+    if (*input < lower || *input > upper)
+      printf("Invalid input! Provide a value in the range [%d - %d].\n", lower,
+             upper);
+    else
+      break;
+  }
 
   return 0;
 };

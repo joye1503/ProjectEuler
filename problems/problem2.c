@@ -55,16 +55,16 @@ int problem2(int a, int limit, int *sum) {
 int problem2CL(void) {
   int a, limit, sum;
 
-  // Get a, b, and limit
-  printf("This code finds the sum of all Fibonacci numbers that are "
-         "multiples of [a] below [limit].\n\n");
-  getUserInt("Enter a: ", &a);
-  getUserInt("Enter limit: ", &limit);
+  // Get a and limit from user
+  printf("    This code finds the sum of all Fibonacci numbers that are\n"
+         "      multiples of [a] below [limit].\n\n");
+  getUserInt("      Enter a: ", &a);
+  getUserInt("      Enter limit: ", &limit);
 
   // Find sum of multiples
   problem2(a, limit, &sum);
 
-  printf("Sum of Fibonacci numbers that are multiples of %d below %d: %d\n",
+  printf("    Sum of Fibonacci numbers that are multiples of %d below %d: %d\n\n",
          a, limit, sum);
 
   return 0;

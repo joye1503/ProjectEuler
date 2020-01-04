@@ -21,12 +21,12 @@ int problem1(int a, int b, int limit, int *sum) {
   *sum = 0;
 
   // Multiples of a
-  for (int i=a; i<limit; i+=a)
+  for (int i = a; i < limit; i += a)
     *sum += i;
 
   // Multiples of b
-  for (int i=b; i<limit; i+=b)
-    if (i%a)
+  for (int i = b; i < limit; i += b)
+    if (i % a)
       *sum += i;
 
   return 0;
@@ -49,17 +49,17 @@ int problem1(int a, int b, int limit, int *sum) {
 int problem1CL(void) {
   int a, b, limit, sum;
 
-  // Get a, b, and limit
-  printf("This code finds the sum of all the multiples of [a] or [b]\n  below "
-         "[limit].\n\n");
-  getUserInt("Enter a: ", &a);
-  getUserInt("Enter b: ", &b);
-  getUserInt("Enter limit: ", &limit);
+  // Get a, b, and limit from user
+  printf("    This code finds the sum of all the multiples of [a] or [b]\n"
+         "      below [limit].\n\n");
+  getUserInt("      Enter a: ", &a);
+  getUserInt("      Enter b: ", &b);
+  getUserInt("      Enter limit: ", &limit);
 
   // Find sum of multiples
   problem1(a, b, limit, &sum);
 
-  printf("Sum of multiples of %d or %d below %d: %d\n", a, b, limit, sum);
+  printf("    Sum of multiples of %d or %d below %d: %d\n\n", a, b, limit, sum);
 
   return 0;
 };

@@ -6,6 +6,7 @@
 // Interface utilites
 // -----------------------------------------------------------------------------
 int getUserInt(char *userPrompt, int *input);
+int getValidUserInt(char *userPrompt, int lower, int upper, int *input);
 
 // -----------------------------------------------------------------------------
 // Math utilities
