@@ -11,9 +11,9 @@ int main(void) {
   printf("-------------------------------------------------------------------\n"
          "  Welcome to a Project Euler solver:\n"
          "-------------------------------------------------------------------\n"
-         "    Menu Option 1: Print help information\n"
-         "    Menu Option 2: Solve Euler problem\n"
-         "    Menu Option 3: Exit\n\n");
+         "  Menu Option 1: Print help information\n"
+         "  Menu Option 2: Solve Euler problem\n"
+         "  Menu Option 3: Exit\n\n");
 
   // Loop until exit
   while (menuOption != 3) {

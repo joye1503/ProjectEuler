@@ -1,3 +1,11 @@
 # ProjectEuler
 
-This repository contains Project Euler solution code started in 2020.
+This code provides solutions to Project Euler problems.
+
+To build
+
+  make euler
+
+To run
+
+  ./euler
