@@ -47,7 +47,7 @@ $(OBJDIR)/%.o : $(CURDIR)/%.c | $$(@D)/.DIR
 	$(CC) $(CFLAGS) -c -o $@ $(abspath $<) $(LDLIBS)
 
 $(OBJDIR)/% : tests/%.c | $$(@D)/.DIR
-	$(CC) $(CFLAGS) -o $@ $(abspath $<) $(LDLIBS)
+	$(CC) -o $@ $^ $(CFLAGS)
 
 # Solution code
 utils.c    := $(sort $(wildcard utils/*.c))
@@ -73,8 +73,7 @@ all: euler
 run-%: $(OBJDIR)/%
 	@tests/tap.sh $(<:$(OBJDIR)/%=%)
 
-test: tests
-	$(tests:$(OBJDIR)/%=run-%)
+test: $(tests:$(OBJDIR)/%=run-%)
 
 # Style
 style:
