@@ -92,4 +92,52 @@ int isPrimeLong(long number, bool *prime) {
   return 0;
 };
 // -----------------------------------------------------------------------------
+/**
+  @brief Return minimum of two integers
+
+  @param[in] a  first integer
+  @param[in] b  second integer
+
+  @return  Minimum of a and b
+**/
+// -----------------------------------------------------------------------------
+int intMin(int a, int b) {
+  return a < b ? a : b;
+};
+/**
+  @brief Return maximum of two integers
+
+  @param[in] a  first integer
+  @param[in] b  second integer
+
+  @return  Maximum of a and b
+**/
+// -----------------------------------------------------------------------------
+int intMax(int a, int b) {
+  return a > b ? a : b;
+};
+/**
+  @brief Return minimum of two long integers
+
+  @param[in] a  first integer
+  @param[in] b  second integer
+
+  @return  Minimum of a and b
+**/
+// -----------------------------------------------------------------------------
+int longMin(long a, long b) {
+  return a < b ? a : b;
+};
+/**
+  @brief Return maximum of two long integers
+
+  @param[in] a  first integer
+  @param[in] b  second integer
+
+  @return  Maximum of a and b
+**/
+// -----------------------------------------------------------------------------
+int longMax(long a, long b) {
+  return a > b ? a : b;
+};
 /// @}

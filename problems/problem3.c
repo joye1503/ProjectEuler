@@ -17,32 +17,32 @@
 // -----------------------------------------------------------------------------
 int problem3(long number, long *factor) {
   bool finished = false;
-  long largest = -1, remainder = number;
+  long largest = -1, dividend = number;
 
   // Find factor
   while (!finished) {
     // Check for factorization completion
-    isPrime(remainder, &finished);
+    isPrime(dividend, &finished);
     if (finished)
       break;
 
     // Divide out next prime factor
-    long bound = floor(sqrt((double)remainder));
+    long bound = floor(sqrt((double)dividend));
     bool prime = false;
     for (long i = 2; i < bound; i++) {
       // Check for prime divisor
-      if (!(remainder % i))
+      if (!(dividend % i))
         isPrime(i, &prime);
 
       // Save and break
       if (prime) {
-        remainder /= i;
+        dividend /= i;
         largest = longMax(i, largest);
         break;
       }
     }
   }
-  *factor = longMax(remainder, largest);
+  *factor = longMax(dividend, largest);
 
   return 0;
 };

@@ -4,7 +4,8 @@
 /// Test Project Euler Problem 3
 // -----------------------------------------------------------------------------
 int main(void) {
-  long number = 600851475143, factor, trueResult = 6857;
+  long trueResult = 6857;
+  long number = 600851475143, factor;
 
   // Get largest prime factor
   problem3(number, &factor);
