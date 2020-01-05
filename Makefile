@@ -4,7 +4,7 @@ ifeq (,$(filter-out undefined default,$(origin CC)))
 endif
 
 OPT    = -O -g -march=native -ffp-contract=fast -fopenmp-simd
-CFLAGS = -std=c99 $(OPT) -Wall -Wextra -Wno-unused-parameter -fPIC -MMD -MP
+CFLAGS = -std=c99 $(OPT) -Wall -Wextra -Wno-unused-parameter -fPIC -MMD -MP -lm
 
 UNDERSCORE ?= 1
 ifeq ($(UNDERSCORE), 1)
