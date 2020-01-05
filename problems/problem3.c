@@ -16,23 +16,33 @@
 **/
 // -----------------------------------------------------------------------------
 int problem3(long number, long *factor) {
-  bool prime = false;
-  long bound = floor(sqrt((double)number));
-  *factor = 0;
+  bool finished = false;
+  long largest = -1, remainder = number;
 
   // Find factor
-  for (long i = bound; i > 1; i--) {
-    // Check if factor
-    if (!(number % i))
-      // Check if prime
-      isPrimeLong(i, &prime);
-
-    // Save result if prime
-    if (prime) {
-      *factor = i;
+  while (!finished) {
+    // Check for factorization completion
+    isPrime(remainder, &finished);
+    if (finished)
       break;
+
+    // Divide out next prime factor
+    long bound = floor(sqrt((double)remainder));
+    bool prime = false;
+    for (long i = 2; i < bound; i++) {
+      // Check for prime divisor
+      if (!(remainder % i))
+        isPrime(i, &prime);
+
+      // Save and break
+      if (prime) {
+        remainder /= i;
+        largest = longMax(i, largest);
+        break;
+      }
     }
   }
+  *factor = longMax(remainder, largest);
 
   return 0;
 };
