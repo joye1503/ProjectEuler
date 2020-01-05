@@ -18,6 +18,7 @@
 int problem3(long number, long *factor) {
   bool prime = false;
   long bound = floor(sqrt((double)number));
+  *factor = 0;
 
   // Find factor
   for (long i = bound; i > 1; i--) {

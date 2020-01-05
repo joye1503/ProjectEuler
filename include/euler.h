@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 int problem1(int a, int b, int limit, int *sum);
 int problem2(int a, int limit, int *sum);
-int problem3(int number, int *factor);
+int problem3(int number, long *factor);
 
 // -----------------------------------------------------------------------------
 // Command line interfaces

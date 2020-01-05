@@ -10,8 +10,8 @@ int main(void) {
   problem3(number, &factor);
 
   // Check
-  if (sum != 6857)
-    printf("Error:\n\tComputed: %d != True: 6857\n", sum);
+  if (factor != 6857)
+    printf("Error:\n\tComputed: %ld != True: 6857\n", factor);
 
   return 0;
 }
