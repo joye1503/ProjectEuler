@@ -20,16 +20,16 @@ int problem2(int a, int limit, int *sum) {
   *sum = 0;
 
   // Fibonacci numbers
-  int f1 = 0, f2 = 1, f3 = 1;
-  while (f3 < limit) {
+  int f0 = 0, f1 = 1, f2 = 1;
+  while (f2 < limit) {
     // Multiples of a
-    if (!(f3 % a))
-      *sum += f3;
+    if (!(f2 % a))
+      *sum += f2;
 
     // Iterate
+    f0 = f1;
     f1 = f2;
-    f2 = f3;
-    f3 = f1 + f2;
+    f2 = f0 + f1;
   }
 
   return 0;
