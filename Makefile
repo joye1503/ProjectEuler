@@ -15,7 +15,7 @@ ifeq ($(COVERAGE), 1)
   CFLAGS += --coverage
 endif
 
-# IBM compatibility
+# IBM pp arch compatibility
 ARCH := $(shell uname -m)
 ifneq (,$(findstring pp,$(ARCH)))
   OPT += -mcpu=native
