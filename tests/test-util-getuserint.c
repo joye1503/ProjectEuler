@@ -12,8 +12,10 @@ int main(void) {
   // Open file
   stream = fopen("tests/input/test-util-getuserint.in", "r");
   if(stream == NULL) {
+    // LCOV_EXCL_START
     perror("Error opening file\n");
     return(-1);
+    // LCOV_EXCL_STOP
   }
 
   // Get userInt
@@ -21,7 +23,9 @@ int main(void) {
 
   // Check
   if (input != trueResult)
+    // LCOV_EXCL_START
     printf("Error:\n\tComputed: %d != True: %d\n", input, trueResult);
+  // LCOV_EXCL_STOP
 
 
   // Close

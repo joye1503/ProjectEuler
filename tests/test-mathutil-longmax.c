@@ -13,7 +13,9 @@ int main(void) {
 
   // Check
   if (max != trueResult)
+    // LCOV_EXCL_START
     printf("Error:\n\tComputed: %ld != True: %ld\n", max, trueResult);
+  // LCOV_EXCL_STOP
 
   return 0;
 }

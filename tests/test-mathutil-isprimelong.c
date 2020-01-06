@@ -15,8 +15,10 @@ int main(void) {
 
   // Check
   if (prime != trueResult)
+    // LCOV_EXCL_START
     printf("Error:\n\tComputed: %s != True: %s\n", prime ? "true" : "false",
            trueResult ? "true" : "false");
+  // LCOV_EXCL_STOP
 
   // Second test
   trueResult = false;
@@ -27,8 +29,10 @@ int main(void) {
 
   // Check
   if (prime != trueResult)
+    // LCOV_EXCL_START
     printf("Error:\n\tComputed: %s != True: %s\n", prime ? "true" : "false",
            trueResult ? "true" : "false");
+  // LCOV_EXCL_STOP
 
   return 0;
 }

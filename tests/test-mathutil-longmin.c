@@ -13,7 +13,9 @@ int main(void) {
 
   // Check
   if (min != trueResult)
+    // LCOV_EXCL_START
     printf("Error:\n\tComputed: %ld != True: %ld\n", min, trueResult);
+  // LCOV_EXCL_STOP
 
   return 0;
 }

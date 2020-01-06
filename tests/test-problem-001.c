@@ -13,7 +13,9 @@ int main(void) {
 
   // Check
   if (sum != trueResult)
+    // LCOV_EXCL_START
     printf("Error:\n\tComputed: %ld != True: %ld\n", sum, trueResult);
+  // LCOV_EXCL_STOP
 
   return 0;
 }
