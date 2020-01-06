@@ -1,4 +1,8 @@
-printf "# ------------------------------\n"
+printf "1..3\n";
+
+# Capture output
+tmpfiles="${output} ${output}.out ${output}.diff ${output}.err SESSION.NAME"
+trap 'rm -f ${tmpfiles}' EXIT
 
 # Run in subshell
 (build/$1 || false) > ${output}.out 2> ${output}.err

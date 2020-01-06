@@ -15,6 +15,13 @@ ifeq ($(COVERAGE), 1)
   CFLAGS += --coverage
 endif
 
+# Parallel options
+# Get number of processors of the machine
+NPROCS := $(shell getconf _NPROCESSORS_ONLN)
+# prepare make options to run in parallel
+MFLAGS := -j $(NPROCS) --warn-undefined-variables \
+                       --no-print-directory --no-keep-going
+
 # Build directories
 OBJDIR := build
 INCDIR := include
@@ -81,6 +88,11 @@ run-%: $(OBJDIR)/%
 	@tests/tap.sh $(<:$(OBJDIR)/%=%)
 
 test: $(tests:$(OBJDIR)/%=run-%)
+
+PROVE ?= prove
+PROVE_OPTS ?= -j $(NPROCS)
+prove : $(tests)
+	$(PROVE) $(PROVE_OPTS) --exec 'tests/tap.sh' $(tests:$(OBJDIR)/%=%)
 
 # Style
 style:
