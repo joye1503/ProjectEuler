@@ -10,7 +10,7 @@ int main(void) {
   long input;
 
   // Open file
-  stream = fopen("tests/input/test-util-getuserlong.in" , "r");
+  stream = fopen("tests/input/test-util-getuserlong.in", "r");
   if(stream == NULL) {
     perror("Error opening file\n");
     return(-1);

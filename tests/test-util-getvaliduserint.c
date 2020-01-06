@@ -10,7 +10,7 @@ int main(void) {
   int lower = 1, upper = 500, input;
 
   // Open file
-  stream = fopen("tests/input/test-util-getvaliduserint.in" , "r");
+  stream = fopen("tests/input/test-util-getvaliduserint.in", "r");
   if(stream == NULL) {
     perror("Error opening file\n");
     return(-1);

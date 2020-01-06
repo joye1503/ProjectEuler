@@ -18,7 +18,7 @@ int main(void) {
   // Loop until exit
   while (menuOption != 3) {
     // Prompt user
-    getValidUserInt("  Enter a menu option (1-3): ", 1, 3, &menuOption);
+    getValidUserInt("  Enter a menu option (1-3): ", stdin, 1, 3, &menuOption);
 
     // Take selected action
     switch (menuOption) {
@@ -35,10 +35,10 @@ int main(void) {
 
       printf("---------------------------------------------------------------\n"
              "  Euler Problems 1-%d are avaliable\n", NUM_PROBLEMS);
-      getValidUserInt("  Select an Euler problem to solve: ", 1, NUM_PROBLEMS,
-                      &problemOption);
+      getValidUserInt("  Select an Euler problem to solve: ", stdin, 1,
+                      NUM_PROBLEMS, &problemOption);
 
-      (*problems[problemOption-1])();
+      (*problems[problemOption-1])(stdin);
     } break;
 
     default :
