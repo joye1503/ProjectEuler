@@ -39,3 +39,5 @@ if [ -s ${output}.err ]; then
 else
     printf "ok 3 $i2 $1 stderr\n"
 fi
+
+printf "# ------------------------------\n"

@@ -11,6 +11,10 @@ ifeq ($(UNDERSCORE), 1)
   CFLAGS += -DUNDERSCORE
 endif
 
+ifeq ($(COVERAGE), 1)
+  CFLAGS += --coverage
+endif
+
 # Build directories
 OBJDIR := build
 INCDIR := include
@@ -30,6 +34,9 @@ color_out = @if [ -t 1 ]; then \
 # if TERM=dumb, use it, otherwise switch to the term one
 output = $(if $(TERM:dumb=),$(call color_out,$1,$2),$(call emacs_out,$1,$2))
 
+# if V is set to non-nil, turn the verbose mode
+quiet = $(if $(V),$($(1)),$(call output,$1,$@);$($(1)))
+
 # Cancel built-in and old-fashioned implicit rules which we don't use
 .SUFFIXES:
 
@@ -42,12 +49,12 @@ output = $(if $(TERM:dumb=),$(call color_out,$1,$2),$(call emacs_out,$1,$2))
 
 .PRECIOUS: %/.DIR
 
-# .o rule
+# build rules
 $(OBJDIR)/%.o : $(CURDIR)/%.c | $$(@D)/.DIR
-	$(CC) $(CFLAGS) -c -o $@ $(abspath $<) $(LDLIBS)
+	$(call quiet,CC) $(CFLAGS) -c -o $@ $(abspath $<) $(LDLIBS)
 
 $(OBJDIR)/% : tests/%.c | $$(@D)/.DIR
-	$(CC) -o $@ $^ $(CFLAGS)
+	$(call quiet,CC) -o $@ $^ $(CFLAGS)
 
 # Solution code
 utils.c    := $(sort $(wildcard utils/*.c))
@@ -66,7 +73,7 @@ euler.o     = $(euler.c:%.c=$(OBJDIR)/%.o)
 
 # Main
 euler: $(euler.o) $(utils.o) $(problems.o)
-	$(CC) -o $@ $^ $(CFLAGS)
+	$(call quiet,CC) -o $@ $^ $(CFLAGS)
 all: euler
 
 # Testing
