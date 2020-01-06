@@ -26,3 +26,8 @@ or, using the `prove` tool distributed with Perl (recommended):
 
     make prove
     
+
+## Contact
+
+You can reach the developer by leaving a comment in the
+[issue tracker](https://github.com/jeremylt/ProjectEuler/issues).
