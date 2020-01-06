@@ -52,14 +52,14 @@ int problem2(long a, long limit, long *sum) {
   four million, find the sum of the even-valued terms.
 **/
 // -----------------------------------------------------------------------------
-int problem2CL(void) {
+int problem2CL(FILE *stream) {
   long a, limit, sum;
 
   // Get a and limit from user
   printf("    This code finds the sum of all Fibonacci numbers that are\n"
          "      multiples of [a] below [limit].\n\n");
-  getUserLong("      Enter a: ", &a);
-  getUserLong("      Enter limit: ", &limit);
+  getUserLong("      Enter a: ", stream, &a);
+  getUserLong("      Enter limit: ", stream, &limit);
 
   // Find sum of multiples
   problem2(a, limit, &sum);

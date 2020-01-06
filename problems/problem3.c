@@ -60,12 +60,12 @@ int problem3(long number, long *factor) {
   What is the largest prime factor of the number 600851475143 ?
 **/
 // -----------------------------------------------------------------------------
-int problem3CL(void) {
+int problem3CL(FILE *stream) {
   long number, factor;
 
   // Get a and limit from user
   printf("    This code finds the largest prime factor of a [number].\n\n");
-  getUserLong("      Enter number: ", &number);
+  getUserLong("      Enter number: ", stream, &number);
 
   // Find sum of multiples
   problem3(number, &factor);

@@ -14,7 +14,7 @@ int problem3(long number, long *factor);
 // -----------------------------------------------------------------------------
 // Command line interfaces
 // -----------------------------------------------------------------------------
-typedef int funcPtr(void);
+typedef int funcPtr(FILE *stream);
 funcPtr problem1CL, problem2CL, problem3CL;
 
 funcPtr *problems[NUM_PROBLEMS] = {

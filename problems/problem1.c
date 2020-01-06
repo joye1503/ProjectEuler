@@ -46,15 +46,15 @@ int problem1(long a, long b, long limit, long *sum) {
   Find the sum of all the multiples of 3 or 5 below 1000.
 **/
 // -----------------------------------------------------------------------------
-int problem1CL(void) {
+int problem1CL(FILE *stream) {
   long a, b, limit, sum;
 
   // Get a, b, and limit from user
   printf("    This code finds the sum of all the multiples of [a] or [b]\n"
          "      below [limit].\n\n");
-  getUserLong("      Enter a: ", &a);
-  getUserLong("      Enter b: ", &b);
-  getUserLong("      Enter limit: ", &limit);
+  getUserLong("      Enter a: ", stream, &a);
+  getUserLong("      Enter b: ", stream, &b);
+  getUserLong("      Enter limit: ", stream, &limit);
 
   // Find sum of multiples
   problem1(a, b, limit, &sum);

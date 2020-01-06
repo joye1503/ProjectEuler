@@ -8,10 +8,12 @@
 // -----------------------------------------------------------------------------
 // Interface utilites
 // -----------------------------------------------------------------------------
-int getUserInt(char *userPrompt, int *input);
-int getValidUserInt(char *userPrompt, int lower, int upper, int *input);
-int getUserLong(char *userPrompt, long *input);
-int getValidUserLong(char *userPrompt, long lower, long upper, long *input);
+int getUserInt(char *userPrompt, FILE *stream, int *input);
+int getValidUserInt(char *userPrompt, FILE *stream, int lower, int upper,
+                    int *input);
+int getUserLong(char *userPrompt, FILE *stream, long *input);
+int getValidUserLong(char *userPrompt, FILE *stream, long lower, long upper,
+                     long *input);
 
 // -----------------------------------------------------------------------------
 // Math utilities
