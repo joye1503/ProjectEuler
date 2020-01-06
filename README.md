@@ -6,11 +6,11 @@ This code provides solutions to Project Euler problems.
 
 ## Building
 
-To build the interactive command line interface
+To build the interactive command line interface:
 
     make euler
 
-and to run the interface
+and to run the interface:
 
     ./euler
 
@@ -20,6 +20,6 @@ The test suite produces [TAP](https://testanything.org) output and is run by:
 
     make test
 
-or, using the `prove` tool distributed with Perl (recommended)
+or, using the `prove` tool distributed with Perl (recommended):
 
     make prove
