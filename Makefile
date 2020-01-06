@@ -125,6 +125,6 @@ cln clean:
 	$(RM) -r $(OBJDIR)/*
 
 clean-all: clean
-	$(RM) -rf doc/html
+	$(RM) -r doc/html
 
 .PHONY: cln clean clean-all doc style test tidy
