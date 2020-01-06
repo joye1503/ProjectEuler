@@ -6,7 +6,7 @@
 /// @{
 // -----------------------------------------------------------------------------
 /**
-  @brief Compute GCD of integers a and b
+  @brief Compute GCD of integers (long int) a and b
 
   @param[in] a        First integer
   @param[in] b        Second integer
@@ -15,7 +15,7 @@
   @return  An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int calculateGCD(int a, int b, int *result) {
+int calculateGCD(long a, long b, long *result) {
   // Compute gcd
   if (b == 0)
     *result = a;
@@ -26,7 +26,7 @@ int calculateGCD(int a, int b, int *result) {
 };
 // -----------------------------------------------------------------------------
 /**
-  @brief Compute LCM of integers a and b
+  @brief Compute LCM of integers (long int) a and b
 
   @param[in] a        First integer
   @param[in] b        Second integer
@@ -35,37 +35,15 @@ int calculateGCD(int a, int b, int *result) {
   @return  An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int calculateLCM(int a, int b, int *result) {
+int calculateLCM(long a, long b, long *result) {
   // Compute gcd
-  int gcd;
+  long gcd;
   calculateGCD(a, b, &gcd);
 
   // Compute lcm
-  int lcm = a * b / gcd;
+  long lcm = a * b / gcd;
 
   *result = lcm;
-
-  return 0;
-};
-// -----------------------------------------------------------------------------
-/**
-  @brief Check if number is prime
-
-  @param[in] number  number to check primality
-  @param[out] prime  boolian value, true if prime, othewise false
-
-  @return  An error code: 0 - success, otherwise - failure
-**/
-// -----------------------------------------------------------------------------
-int isPrime(int number, bool *prime) {
-  int bound = floor(sqrt((double)number));
-
-  // Check if prime
-  for (int i = bound; i > 1; i--) {
-    *prime = number % i;
-    if (!(*prime))
-      break;
-  }
 
   return 0;
 };
@@ -79,7 +57,7 @@ int isPrime(int number, bool *prime) {
   @return  An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int isPrimeLong(long number, bool *prime) {
+int isPrime(long number, bool *prime) {
   long bound = floor(sqrt((double)number));
 
   // Check if prime
@@ -91,39 +69,6 @@ int isPrimeLong(long number, bool *prime) {
 
   return 0;
 };
-// -----------------------------------------------------------------------------
-/**
-  @brief Return minimum of two integers
-
-  @param[in] a  first integer
-  @param[in] b  second integer
-
-  @return  Minimum of a and b
-**/
-// -----------------------------------------------------------------------------
-int intMin(int a, int b) {
-  return a < b ? a : b;
-};
-/**
-  @brief Return maximum of two integers
-
-  @param[in] a  first integer
-  @param[in] b  second integer
-
-  @return  Maximum of a and b
-**/
-// -----------------------------------------------------------------------------
-int intMax(int a, int b) {
-  return a > b ? a : b;
-};
-/**
-  @brief Return minimum of two long integers
-
-  @param[in] a  first integer
-  @param[in] b  second integer
-
-  @return  Minimum of a and b
-**/
 // -----------------------------------------------------------------------------
 long longMin(long a, long b) {
   return a < b ? a : b;

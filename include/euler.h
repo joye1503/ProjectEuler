@@ -7,8 +7,8 @@
 // -----------------------------------------------------------------------------
 // Solution code
 // -----------------------------------------------------------------------------
-int problem1(int a, int b, int limit, int *sum);
-int problem2(int a, int limit, int *sum);
+int problem1(long a, long b, long limit, long *sum);
+int problem2(long a, long limit, long *sum);
 int problem3(long number, long *factor);
 
 // -----------------------------------------------------------------------------

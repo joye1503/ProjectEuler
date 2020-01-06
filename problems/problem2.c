@@ -15,7 +15,7 @@
   @return An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int problem2(int a, int limit, int *sum) {
+int problem2(long a, long limit, long *sum) {
   // Initalize
   *sum = 0;
 
@@ -53,19 +53,19 @@ int problem2(int a, int limit, int *sum) {
 **/
 // -----------------------------------------------------------------------------
 int problem2CL(void) {
-  int a, limit, sum;
+  long a, limit, sum;
 
   // Get a and limit from user
   printf("    This code finds the sum of all Fibonacci numbers that are\n"
          "      multiples of [a] below [limit].\n\n");
-  getUserInt("      Enter a: ", &a);
-  getUserInt("      Enter limit: ", &limit);
+  getUserLong("      Enter a: ", &a);
+  getUserLong("      Enter limit: ", &limit);
 
   // Find sum of multiples
   problem2(a, limit, &sum);
 
-  printf("    Sum of Fibonacci numbers that are multiples of %d below %d: %d\n\n",
-         a, limit, sum);
+  printf("    Sum of Fibonacci numbers that are multiples of %ld below %ld: "
+         "%ld\n\n", a, limit, sum);
 
   return 0;
 };

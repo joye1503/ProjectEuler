@@ -16,16 +16,16 @@
   @return An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int problem1(int a, int b, int limit, int *sum) {
+int problem1(long a, long b, long limit, long *sum) {
   // Initalize
   *sum = 0;
 
   // Multiples of a
-  for (int i = a; i < limit; i += a)
+  for (long i = a; i < limit; i += a)
     *sum += i;
 
   // Multiples of b
-  for (int i = b; i < limit; i += b)
+  for (long i = b; i < limit; i += b)
     if (i % a)
       *sum += i;
 
@@ -47,19 +47,20 @@ int problem1(int a, int b, int limit, int *sum) {
 **/
 // -----------------------------------------------------------------------------
 int problem1CL(void) {
-  int a, b, limit, sum;
+  long a, b, limit, sum;
 
   // Get a, b, and limit from user
   printf("    This code finds the sum of all the multiples of [a] or [b]\n"
          "      below [limit].\n\n");
-  getUserInt("      Enter a: ", &a);
-  getUserInt("      Enter b: ", &b);
-  getUserInt("      Enter limit: ", &limit);
+  getUserLong("      Enter a: ", &a);
+  getUserLong("      Enter b: ", &b);
+  getUserLong("      Enter limit: ", &limit);
 
   // Find sum of multiples
   problem1(a, b, limit, &sum);
 
-  printf("    Sum of multiples of %d or %d below %d: %d\n\n", a, b, limit, sum);
+  printf("    Sum of multiples of %ld or %ld below %ld: %ld\n\n",
+         a, b, limit, sum);
 
   return 0;
 };

@@ -5,15 +5,15 @@
 #include "euler.h"
 // -----------------------------------------------------------------------------
 int main(void) {
-  int trueResult = 4613732;
-  int a = 2, limit = 4000000, sum;
+  long trueResult = 4613732;
+  long a = 2, limit = 4000000, sum;
 
   // Get sum
   problem2(a, limit, &sum);
 
   // Check
   if (sum != trueResult)
-    printf("Error:\n\tComputed: %d != True: %d\n", sum, trueResult);
+    printf("Error:\n\tComputed: %ld != True: %ld\n", sum, trueResult);
 
   return 0;
 }

@@ -16,13 +16,10 @@ int getValidUserLong(char *userPrompt, long lower, long upper, long *input);
 // -----------------------------------------------------------------------------
 // Math utilities
 // -----------------------------------------------------------------------------
-int intMin(int a, int b);
-int intMax(int a, int b);
 long longMin(long a, long b);
 long longMax(long a, long b);
-int calculateGCD(int a, int b, int *result);
-int calculateLCM(int a, int b, int *result);
-int isPrime(int number, bool *prime);
-int isPrimeLong(long number, bool *prime);
+int calculateGCD(long a, long b, long *result);
+int calculateLCM(long a, long b, long *result);
+int isPrime(long number, bool *prime);
 
 #endif

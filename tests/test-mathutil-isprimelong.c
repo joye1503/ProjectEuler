@@ -1,6 +1,6 @@
 /// @file
-/// Test Project Euler isPrimeLong
-/// \test Test isPrimeLong result
+/// Test Project Euler isPrime
+/// \test Test isPrime result
 #include <stdio.h>
 #include <stdbool.h>
 #include "utils.h"
@@ -11,7 +11,7 @@ int main(void) {
   bool prime;
 
   // Get primality
-  isPrimeLong(a, &prime);
+  isPrime(a, &prime);
 
   // Check
   if (prime != trueResult)
@@ -23,7 +23,7 @@ int main(void) {
   a = 999999999988;
 
   // Get primality
-  isPrimeLong(a, &prime);
+  isPrime(a, &prime);
 
   // Check
   if (prime != trueResult)
