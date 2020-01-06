@@ -16,7 +16,8 @@ ifeq ($(COVERAGE), 1)
 endif
 
 # IBM compatibility
-ifneq ($(filter %xlf %xlf_r,$(FC)),)
+ARCH := $(shell uname -m)
+ifneq (,$(findstring "pp",$(ARCH)))
   OPT += -mcpu=native
 else # gfortran/Intel-style options
   OPT += -march=native
