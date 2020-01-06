@@ -18,8 +18,8 @@ int getValidUserLong(char *userPrompt, long lower, long upper, long *input);
 // -----------------------------------------------------------------------------
 int intMin(int a, int b);
 int intMax(int a, int b);
-int longMin(long a, long b);
-int longMax(long a, long b);
+long longMin(long a, long b);
+long longMax(long a, long b);
 int calculateGCD(int a, int b, int *result);
 int calculateLCM(int a, int b, int *result);
 int isPrime(int number, bool *prime);

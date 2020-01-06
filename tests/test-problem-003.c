@@ -1,7 +1,8 @@
-#include <stdio.h>
-#include "euler.h"
 /// @file
 /// Test Project Euler Problem 3
+/// \test Test problem 3 result
+#include <stdio.h>
+#include "euler.h"
 // -----------------------------------------------------------------------------
 int main(void) {
   long trueResult = 6857;

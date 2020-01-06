@@ -107,6 +107,7 @@ style:
 	@astyle --options=.astylerc \
           $(wildcard euler.c include/*.h problems/*.c utils/*.c tests/*.[ch])
 
+# Clang tidy
 CLANG_TIDY ?= clang-tidy
 allfiles.c := euler.c $(problems.c) $(utils.c) $(tests.c)
 %.c.tidy : %.c
@@ -114,9 +115,16 @@ allfiles.c := euler.c $(problems.c) $(utils.c) $(tests.c)
 
 tidy : $(allfiles.c:%=%.tidy)
 
+# Documentation
+doc :
+	doxygen Doxyfile
+
 # Clean
 cln clean:
-	rm -f euler
-	rm -rf $(OBJDIR)/*
+	$(RM) euler
+	$(RM) -r $(OBJDIR)/*
 
-.PHONY: cln clean style test tidy
+clean-all: clean
+	$(RM) -rf doc/html
+
+.PHONY: cln clean clean-all doc style test tidy

@@ -125,7 +125,7 @@ int intMax(int a, int b) {
   @return  Minimum of a and b
 **/
 // -----------------------------------------------------------------------------
-int longMin(long a, long b) {
+long longMin(long a, long b) {
   return a < b ? a : b;
 };
 /**
@@ -137,7 +137,7 @@ int longMin(long a, long b) {
   @return  Maximum of a and b
 **/
 // -----------------------------------------------------------------------------
-int longMax(long a, long b) {
+long longMax(long a, long b) {
   return a > b ? a : b;
 };
 /// @}
