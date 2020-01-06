@@ -25,7 +25,6 @@ The test suite produces [TAP](https://testanything.org) output and is run by:
 or, using the `prove` tool distributed with Perl (recommended):
 
     make prove
-    
 
 ## Contact
 

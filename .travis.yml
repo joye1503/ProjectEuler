@@ -35,14 +35,19 @@ addons:
 install: skip
 
 script:
-  - COVERAGE=1 make prove PROVE_OPTS=-v
+  - if [[ "$TRAVIS_CPU_ARCH" == "amd64" ]]; then
+        export COVERAGE=1;
+    fi
+  - make prove PROVE_OPTS=-v
   - if [[ "$TRAVIS_CPU_ARCH" == "amd64" ]]; then
         clang-tidy --version && make -j2 tidy;
     fi
 
 after_success:
-  - lcov --directory . --capture --output-file coverage.info
-  - bash <(curl -s https://codecov.io/bash)
+  - if [[ "$TRAVIS_CPU_ARCH" == "amd64" ]]; then
+        lcov --directory . --capture --output-file coverage.info
+        && bash <(curl -s https://codecov.io/bash);
+    fi
 
 cache:
   ccache: true
