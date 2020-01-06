@@ -3,7 +3,7 @@ ifeq (,$(filter-out undefined default,$(origin CC)))
   CC = gcc
 endif
 
-OPT    = -O -g -march=native -ffp-contract=fast -fopenmp-simd
+OPT    = -O -g -ffp-contract=fast -fopenmp-simd
 CFLAGS = -std=c99 $(OPT) -Wall -Wextra -Wno-unused-parameter -fPIC -MMD -MP -lm
 
 UNDERSCORE ?= 1
@@ -13,6 +13,13 @@ endif
 
 ifeq ($(COVERAGE), 1)
   CFLAGS += --coverage
+endif
+
+# IBM compatibility
+ifneq ($(filter %xlf %xlf_r,$(FC)),)
+  OPT += -mcpu=native
+else # gfortran/Intel-style options
+  OPT += -march=native
 endif
 
 # Parallel options
