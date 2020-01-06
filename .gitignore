@@ -12,7 +12,3 @@ doc/html
 
 # Debugging
 vgcore*
-
-# Testing
-.err
-.out
