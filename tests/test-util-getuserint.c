@@ -27,7 +27,6 @@ int main(void) {
     printf("Error:\n\tComputed: %d != True: %d\n", input, trueResult);
   // LCOV_EXCL_STOP
 
-
   // Close
   fclose(stream);
 
