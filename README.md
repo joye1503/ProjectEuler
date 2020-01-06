@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/jeremylt/ProjectEuler.svg?branch=master)](https://travis-ci.com/jeremylt/ProjectEuler)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Documentation](https://codedocs.xyz/jeremylt/ProjectEuler.svg)](https://codedocs.xyz/jeremylt/ProjectEuler/)
 
 This code provides solutions to Project Euler problems.
 
@@ -24,3 +25,4 @@ The test suite produces [TAP](https://testanything.org) output and is run by:
 or, using the `prove` tool distributed with Perl (recommended):
 
     make prove
+    
