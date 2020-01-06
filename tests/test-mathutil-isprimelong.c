@@ -11,7 +11,7 @@ int main(void) {
   bool prime;
 
   // Get primality
-  isPrime(a, &prime);
+  isPrimeLong(a, &prime);
 
   // Check
   if (prime != trueResult)
@@ -23,7 +23,7 @@ int main(void) {
   a = 999999999988;
 
   // Get primality
-  isPrime(a, &prime);
+  isPrimeLong(a, &prime);
 
   // Check
   if (prime != trueResult)
