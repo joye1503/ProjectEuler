@@ -5,17 +5,22 @@
 #include "euler.h"
 // -----------------------------------------------------------------------------
 int main(void) {
-  long trueResult = 6857;
-  long number = 600851475143, factor;
+  FILE *stream;
+
+  // Open file
+  stream = fopen("tests/input/test-problem-003.in", "r");
+  if(stream == NULL) {
+    // LCOV_EXCL_START
+    perror("Error opening file\n");
+    return(-1);
+    // LCOV_EXCL_STOP
+  }
 
   // Get largest prime factor
-  problem3(number, &factor);
+  problem3CL(stream);
 
-  // Check
-  if (factor != trueResult)
-    // LCOV_EXCL_START
-    printf("Error:\n\tComputed: %ld != True: %ld\n", factor, trueResult);
-  // LCOV_EXCL_STOP
+  // Close
+  fclose(stream);
 
   return 0;
 }

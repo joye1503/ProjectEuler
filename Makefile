@@ -98,7 +98,7 @@ run-%: $(OBJDIR)/%
 test: $(tests:$(OBJDIR)/%=run-%)
 
 PROVE ?= prove
-PROVE_OPTS ?= -j $(NPROCS)
+PROVE_OPTS ?=
 prove : $(tests)
 	$(PROVE) $(PROVE_OPTS) --exec 'tests/tap.sh' $(tests:$(OBJDIR)/%=%)
 

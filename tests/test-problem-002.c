@@ -5,17 +5,22 @@
 #include "euler.h"
 // -----------------------------------------------------------------------------
 int main(void) {
-  long trueResult = 4613732;
-  long a = 2, limit = 4000000, sum;
+  FILE *stream;
+
+  // Open file
+  stream = fopen("tests/input/test-problem-002.in", "r");
+  if(stream == NULL) {
+    // LCOV_EXCL_START
+    perror("Error opening file\n");
+    return(-1);
+    // LCOV_EXCL_STOP
+  }
 
   // Get sum
-  problem2(a, limit, &sum);
+  problem2CL(stream);
 
-  // Check
-  if (sum != trueResult)
-    // LCOV_EXCL_START
-    printf("Error:\n\tComputed: %ld != True: %ld\n", sum, trueResult);
-  // LCOV_EXCL_STOP
+  // Close
+  fclose(stream);
 
   return 0;
 }
