@@ -30,6 +30,7 @@ install: skip
 
 script:
   - make prove PROVE_OPTS=-v
+  - clang-tidy --version && make -j2 tidy
 
 cache:
   ccache: true
