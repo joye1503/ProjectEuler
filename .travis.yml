@@ -29,7 +29,6 @@ jobs:
 install: skip
 
 script:
-  - uname -m
   - make prove PROVE_OPTS=-v
   - if [[ "$TRAVIS_CPU_ARCH" == "amd64" ]]; then
         clang-tidy --version && make -j2 tidy;

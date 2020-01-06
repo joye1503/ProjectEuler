@@ -17,7 +17,7 @@ endif
 
 # IBM compatibility
 ARCH := $(shell uname -m)
-ifneq (,$(findstring "pp",$(ARCH)))
+ifneq (,$(findstring pp,$(ARCH)))
   OPT += -mcpu=native
 else # gfortran/Intel-style options
   OPT += -march=native
