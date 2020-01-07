@@ -84,7 +84,7 @@ int isPalindrome(long number, bool *palindrome) {
 
   // Convert to array
   int *numasarray;
-  numasarray = (int*)calloc(numdigits, sizeof(int));
+  numasarray = (int *)calloc(numdigits, sizeof(int));
   long copy = number;
   for (int i = 0; i < numdigits; i++) {
     numasarray[i] = copy % 10;
