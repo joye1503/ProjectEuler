@@ -23,5 +23,6 @@ long longMax(long a, long b);
 int calculateGCD(long a, long b, long *result);
 int calculateLCM(long a, long b, long *result);
 int isPrime(long number, bool *prime);
+int isPalindrome(long number, bool *palindrome);
 
 #endif

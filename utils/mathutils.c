@@ -70,6 +70,40 @@ int isPrime(long number, bool *prime) {
   return 0;
 };
 // -----------------------------------------------------------------------------
+/**
+  @brief Check if number (long int) is a palindrome
+
+  @param[in] number  number to check as palindrome
+  @param[out] prime  boolian value, true if palindrome, othewise false
+
+  @return  An error code: 0 - success, otherwise - failure
+**/
+// -----------------------------------------------------------------------------
+int isPalindrome(long number, bool *palindrome) {
+  int numdigits = floor(log10(number)) + 1;
+
+  // Convert to array
+  int *numasarray;
+  numasarray = (int*)calloc(numdigits, sizeof(int));
+  long copy = number;
+  for (int i = 0; i < numdigits; i++) {
+    numasarray[i] = copy % 10;
+    copy /= 10;
+  }
+
+  // Check if palindrome
+  for (int i = 0; i < numdigits / 2; i++) {
+    *palindrome = (numasarray[i] == numasarray[numdigits-i-1]);
+    if (!(*palindrome))
+      break;
+  }
+
+  // Cleanup
+  free(numasarray);
+
+  return 0;
+};
+// -----------------------------------------------------------------------------
 long longMin(long a, long b) {
   return a < b ? a : b;
 };
