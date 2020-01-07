@@ -9,8 +9,8 @@
 /**
   @brief Find the largest prime factor of a number
 
-  @param[in] number  number to find factor of
-  @param[out] factor largest prime factor
+  @param[in] number   number to find factor of
+  @param[out] factor  largest prime factor
 
   @return An error code: 0 - success, otherwise - failure
 **/

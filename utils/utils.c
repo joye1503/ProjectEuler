@@ -8,8 +8,8 @@
 /**
   @brief Get user input integer
 
-  @param[in] userPrompt  Text for user prompt
-  @param[out] input      User input integer
+  @param[in] userPrompt  text for user prompt
+  @param[out] input      user input integer
 
   @return  An error code: 0 - success, otherwise - failure
 **/
@@ -37,10 +37,10 @@ int getUserInt(char *userPrompt, FILE *stream, int *input) {
 /**
   @brief Get user input integer from a range
 
-  @param[in] userPrompt  Text for user prompt
-  @param[in] lower       Lower end of range, inclusive
-  @param[in] upper       Upper end of range, inclusive
-  @param[out] input      User input integer
+  @param[in] userPrompt  text for user prompt
+  @param[in] lower       lower end of range, inclusive
+  @param[in] upper       upper end of range, inclusive
+  @param[out] input      user input integer
 
   @return  An error code: 0 - success, otherwise - failure
 **/
@@ -65,8 +65,8 @@ int getValidUserInt(char *userPrompt, FILE *stream, int lower, int upper,
 /**
   @brief Get user input integer (long int)
 
-  @param[in] userPrompt  Text for user prompt
-  @param[out] input      User input integer
+  @param[in] userPrompt  text for user prompt
+  @param[out] input      user input integer
 
   @return  An error code: 0 - success, otherwise - failure
 **/
@@ -94,10 +94,10 @@ int getUserLong(char *userPrompt, FILE *stream, long *input) {
 /**
   @brief Get user input integer (long int) from a range
 
-  @param[in] userPrompt  Text for user prompt
-  @param[in] lower       Lower end of range, inclusive
-  @param[in] upper       Upper end of range, inclusive
-  @param[out] input      User input integer
+  @param[in] userPrompt  text for user prompt
+  @param[in] lower       lower end of range, inclusive
+  @param[in] upper       upper end of range, inclusive
+  @param[out] input      user input integer
 
   @return  An error code: 0 - success, otherwise - failure
 **/

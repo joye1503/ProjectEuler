@@ -8,10 +8,10 @@
 /**
   @brief Find the sum of multiples of a or b below limit
 
-  @param[in] a     first divisor
-  @param[in] b     second divisor
-  @param[in] limit limit for sum
-  @param[out] sum  sum of multiples
+  @param[in] a      first divisor
+  @param[in] b      second divisor
+  @param[in] limit  limit for sum
+  @param[out] sum   sum of multiples
 
   @return An error code: 0 - success, otherwise - failure
 **/

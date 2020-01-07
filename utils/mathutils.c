@@ -6,11 +6,11 @@
 /// @{
 // -----------------------------------------------------------------------------
 /**
-  @brief Compute GCD of integers (long int) a and b
+  @brief Compute gcd of integers (long int) a and b
 
-  @param[in] a        First integer
-  @param[in] b        Second integer
-  @param[out] result  GCD of a and b
+  @param[in] a        first integer
+  @param[in] b        second integer
+  @param[out] result  gcd of a and b
 
   @return  An error code: 0 - success, otherwise - failure
 **/
@@ -26,11 +26,11 @@ int calculateGCD(long a, long b, long *result) {
 };
 // -----------------------------------------------------------------------------
 /**
-  @brief Compute LCM of integers (long int) a and b
+  @brief Compute lcm of integers (long int) a and b
 
-  @param[in] a        First integer
-  @param[in] b        Second integer
-  @param[out] result  LCM of a and b
+  @param[in] a        first integer
+  @param[in] b        second integer
+  @param[out] result  lcm of a and b
 
   @return  An error code: 0 - success, otherwise - failure
 **/
@@ -108,7 +108,7 @@ long longMin(long a, long b) {
   return a < b ? a : b;
 };
 /**
-  @brief Return maximum of two long integers
+  @brief Return maximum of two integers (long int)
 
   @param[in] a  first integer
   @param[in] b  second integer
@@ -123,8 +123,8 @@ long longMax(long a, long b) {
 /**
   @brief Return integer (long int) power
 
-  @param[in] base   The base to exponentiate
-  @param[in] power  The power to raise the base to
+  @param[in] base   base to exponentiate
+  @param[in] power  power to raise the base to
 
   @return base^power
 

@@ -8,9 +8,9 @@
 /**
   @brief Find the sum of Fibonacci numbers that are multiples of a below limit
 
-  @param[in] a     divisor
-  @param[in] limit limit for sum
-  @param[out] sum  sum of multiples
+  @param[in] a      divisor
+  @param[in] limit  limit for sum
+  @param[out] sum   sum of multiples
 
   @return An error code: 0 - success, otherwise - failure
 **/
