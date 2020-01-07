@@ -17,10 +17,10 @@ int main(void) {
   }
 
   // Get sum of Fibonacci numbers below 100
-  problem2CL(stream);
+  problem002CL(stream);
 
   // Get sum of even Fibonacci numbers below 4000000
-  problem2CL(stream);
+  problem002CL(stream);
 
   // Close
   fclose(stream);

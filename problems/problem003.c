@@ -15,7 +15,7 @@
   @return An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int problem3(long number, long *factor) {
+int problem003(long number, long *factor) {
   bool finished = false;
   long dividend = number;
 
@@ -59,7 +59,7 @@ int problem3(long number, long *factor) {
   What is the largest prime factor of the number 600851475143 ?
 **/
 // -----------------------------------------------------------------------------
-int problem3CL(FILE *stream) {
+int problem003CL(FILE *stream) {
   long number, factor;
 
   // Get a and limit from user
@@ -67,7 +67,7 @@ int problem3CL(FILE *stream) {
   getUserLong("      Enter number: ", stream, &number);
 
   // Find sum of multiples
-  problem3(number, &factor);
+  problem003(number, &factor);
 
   printf("    The largest prime factor of %ld: %ld\n\n",
          number, factor);

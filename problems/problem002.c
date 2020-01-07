@@ -15,7 +15,7 @@
   @return An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int problem2(long a, long limit, long *sum) {
+int problem002(long a, long limit, long *sum) {
   // Initalize
   *sum = 0;
 
@@ -52,7 +52,7 @@ int problem2(long a, long limit, long *sum) {
   four million, find the sum of the even-valued terms.
 **/
 // -----------------------------------------------------------------------------
-int problem2CL(FILE *stream) {
+int problem002CL(FILE *stream) {
   long a, limit, sum;
 
   // Get a and limit from user
@@ -62,7 +62,7 @@ int problem2CL(FILE *stream) {
   getUserLong("      Enter limit: ", stream, &limit);
 
   // Find sum of multiples
-  problem2(a, limit, &sum);
+  problem002(a, limit, &sum);
 
   printf("    Sum of Fibonacci numbers that are multiples of %ld below %ld: "
          "%ld\n\n", a, limit, sum);

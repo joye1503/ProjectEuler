@@ -17,10 +17,10 @@ int main(void) {
   }
 
   // Get largest prime factor of 13195
-  problem3CL(stream);
+  problem003CL(stream);
 
   // Get largest prime factor of 600851475143
-  problem3CL(stream);
+  problem003CL(stream);
 
   // Close
   fclose(stream);

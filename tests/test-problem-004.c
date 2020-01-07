@@ -17,10 +17,10 @@ int main(void) {
   }
 
   // Get largest 2 digit product palindrome
-  problem4CL(stream);
+  problem004CL(stream);
 
   // Get largest 3 digit product palindrome
-  problem4CL(stream);
+  problem004CL(stream);
 
   // Close
   fclose(stream);

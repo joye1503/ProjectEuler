@@ -17,10 +17,10 @@ int main(void) {
   }
 
   // Get sum of multiples of 3 or 5 below 10
-  problem1CL(stream);
+  problem001CL(stream);
 
   // Get sum of multiples of 3 or 5 below 1000
-  problem1CL(stream);
+  problem001CL(stream);
 
   // Close
   fclose(stream);

@@ -16,7 +16,7 @@
   @return An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int problem4(int digits, long *palindrome) {
+int problem004(int digits, long *palindrome) {
   // Initalize
   *palindrome = -1;
 
@@ -58,7 +58,7 @@ int problem4(int digits, long *palindrome) {
 
 **/
 // -----------------------------------------------------------------------------
-int problem4CL(FILE *stream) {
+int problem004CL(FILE *stream) {
   int number;
   long palindrome;
 
@@ -68,7 +68,7 @@ int problem4CL(FILE *stream) {
   getUserInt("      Enter number: ", stream, &number);
 
   // Find sum of multiples
-  problem4(number, &palindrome);
+  problem004(number, &palindrome);
 
   printf("    The largest palindrome product of %d digit numbers: %ld\n\n",
          number, palindrome);

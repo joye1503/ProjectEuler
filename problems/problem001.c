@@ -16,7 +16,7 @@
   @return An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int problem1(long a, long b, long limit, long *sum) {
+int problem001(long a, long b, long limit, long *sum) {
   // Initalize
   *sum = 0;
 
@@ -46,7 +46,7 @@ int problem1(long a, long b, long limit, long *sum) {
   Find the sum of all the multiples of 3 or 5 below 1000.
 **/
 // -----------------------------------------------------------------------------
-int problem1CL(FILE *stream) {
+int problem001CL(FILE *stream) {
   long a, b, limit, sum;
 
   // Get a, b, and limit from user
@@ -57,7 +57,7 @@ int problem1CL(FILE *stream) {
   getUserLong("      Enter limit: ", stream, &limit);
 
   // Find sum of multiples
-  problem1(a, b, limit, &sum);
+  problem001(a, b, limit, &sum);
 
   printf("    Sum of multiples of %ld or %ld below %ld: %ld\n\n",
          a, b, limit, sum);
