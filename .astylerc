@@ -1,4 +1,4 @@
-# libCEED formatting options for Artistic Style
+# Formatting options for Artistic Style
 --style=google
 --indent=spaces=2
 --max-code-length=80
