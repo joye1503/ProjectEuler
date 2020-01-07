@@ -20,7 +20,7 @@ int problem2(long a, long limit, long *sum) {
   *sum = 0;
 
   // Fibonacci numbers
-  int f0 = 0, f1 = 1, f2 = 1;
+  int f0 = 0, f1 = 1, f2 = f0 + f1;
   while (f2 < limit) {
     // Multiples of a
     if (!(f2 % a))
