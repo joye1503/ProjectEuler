@@ -34,7 +34,7 @@ int problem003(long number, long *factor) {
       if (!(dividend % i))
         isPrime(i, &prime);
 
-      // Save and break
+      // Update dividend and break
       if (prime) {
         dividend /= i;
         break;

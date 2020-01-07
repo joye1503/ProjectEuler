@@ -28,10 +28,11 @@ int problem004(int digits, long *palindrome) {
   // Find palindrome
   for (long first = upper; first >= lower; first--) {
     for (long second = upper; second >= lower; second--) {
-      bool found = false;
       // Check for palindrome
+      bool found = false;
       isPalindrome(first * second, &found);
-      // Modify bounds and update largest found if palindrome
+
+      // Modify lower bound and update largest if palindrome
       if (found) {
         *palindrome = longMax(first * second, *palindrome);
         lower = second;

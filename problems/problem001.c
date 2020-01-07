@@ -26,6 +26,7 @@ int problem001(long a, long b, long limit, long *sum) {
 
   // Multiples of b
   for (long i = b; i < limit; i += b)
+    // Skip common multiples
     if (i % a)
       *sum += i;
 
