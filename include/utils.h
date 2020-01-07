@@ -2,6 +2,7 @@
 #define UTILS_H
 #include <math.h>
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
