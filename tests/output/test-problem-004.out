@@ -1,0 +1,5 @@
+    This code finds the largest palindrome which is a product of
+      [number] digit numbers.
+
+      Enter number:     The largest palindrome product of 3 digit numbers: 906609
+

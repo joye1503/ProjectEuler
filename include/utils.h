@@ -20,6 +20,7 @@ int getValidUserLong(char *userPrompt, FILE *stream, long lower, long upper,
 // -----------------------------------------------------------------------------
 long longMin(long a, long b);
 long longMax(long a, long b);
+long longPow(long base, long power);
 int calculateGCD(long a, long b, long *result);
 int calculateLCM(long a, long b, long *result);
 int isPrime(long number, bool *prime);

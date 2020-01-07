@@ -119,4 +119,26 @@ long longMin(long a, long b) {
 long longMax(long a, long b) {
   return a > b ? a : b;
 };
+// -----------------------------------------------------------------------------
+/**
+  @brief Return integer (long int) power
+
+  @param[in] base   The base to exponentiate
+  @param[in] power  The power to raise the base to
+
+  @return base^power
+
+  @ref Utility
+**/
+// -----------------------------------------------------------------------------
+long longPow(long base, long power) {
+  long result = 1;
+
+  while (power) {
+    if (power & 1) result *= base;
+    power >>= 1;
+    base *= base;
+  }
+  return result;
+}
 /// @}

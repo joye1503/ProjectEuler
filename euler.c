@@ -8,9 +8,9 @@
 int main(void) {
   int menuOption = 0;
 
-  printf("-------------------------------------------------------------------\n"
+  printf("---------------------------------------------------------------\n"
          "  Welcome to a Project Euler solver:\n"
-         "-------------------------------------------------------------------\n"
+         "---------------------------------------------------------------\n"
          "  Menu Option 1: Print help information\n"
          "  Menu Option 2: Solve Euler problem\n"
          "  Menu Option 3: Exit\n\n");
