@@ -16,6 +16,9 @@ int main(void) {
     // LCOV_EXCL_STOP
   }
 
+  // Get largest 2 digit product palindrome
+  problem4CL(stream);
+
   // Get largest 3 digit product palindrome
   problem4CL(stream);
 

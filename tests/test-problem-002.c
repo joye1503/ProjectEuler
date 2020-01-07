@@ -16,7 +16,10 @@ int main(void) {
     // LCOV_EXCL_STOP
   }
 
-  // Get sum
+  // Get sum of Fibonacci numbers below 100
+  problem2CL(stream);
+
+  // Get sum of even Fibonacci numbers below 4000000
   problem2CL(stream);
 
   // Close

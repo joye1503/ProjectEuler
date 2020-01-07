@@ -16,7 +16,10 @@ int main(void) {
     // LCOV_EXCL_STOP
   }
 
-  // Get largest prime factor
+  // Get largest prime factor of 13195
+  problem3CL(stream);
+
+  // Get largest prime factor of 600851475143
   problem3CL(stream);
 
   // Close

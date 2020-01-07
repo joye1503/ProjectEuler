@@ -17,7 +17,7 @@
 // -----------------------------------------------------------------------------
 int problem3(long number, long *factor) {
   bool finished = false;
-  long largest = -1, dividend = number;
+  long dividend = number;
 
   // Find factor
   while (!finished) {
@@ -37,12 +37,11 @@ int problem3(long number, long *factor) {
       // Save and break
       if (prime) {
         dividend /= i;
-        largest = longMax(i, largest);
         break;
       }
     }
   }
-  *factor = longMax(dividend, largest);
+  *factor = dividend;
 
   return 0;
 };
