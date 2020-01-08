@@ -49,7 +49,7 @@ int calculateLCM(long a, long b, long *result) {
 };
 // -----------------------------------------------------------------------------
 /**
-  @brief Check if number (long int) is prime
+  @brief Check if number (long int) is prime in prime list
 
   @param[in] number  number to check primality
   @param[out] prime  boolian value, true if prime, othewise false
@@ -58,6 +58,55 @@ int calculateLCM(long a, long b, long *result) {
 **/
 // -----------------------------------------------------------------------------
 int isPrime(long number, bool *prime) {
+  FILE *stream;
+  char s[100];
+  long n = 0;
+
+  // Open file
+  stream = fopen("utils/primes.txt", "r");
+
+  // Fallback if no primes file
+  if(stream == NULL) {
+    // LCOV_EXCL_START
+    isPrimeFallback(number, prime);
+
+    return 0;
+    // LCOV_EXCL_STOP
+  }
+
+  // Read prime list from file
+  while (fgets(s, sizeof(s), stream)) {
+     // Stop when found prime as big as number
+     n = strtol(s, NULL, 10);
+     if (n >= number)
+       break;
+  }
+
+  // Check for completion
+  if (n == number)
+    *prime = true;
+  else if (n > number)
+    *prime = false;
+  else
+    // Fallback if number is larger than last prime
+    isPrimeFallback(number, prime);
+
+  // Close
+  fclose(stream);
+
+  return 0;
+};
+// -----------------------------------------------------------------------------
+/**
+  @brief Check if number (long int) is prime by calculation
+
+  @param[in] number  number to check primality
+  @param[out] prime  boolian value, true if prime, othewise false
+
+  @return  An error code: 0 - success, otherwise - failure
+**/
+// -----------------------------------------------------------------------------
+int isPrimeFallback(long number, bool *prime) {
   long bound = floor(sqrt((double)number));
 
   // Check if prime
