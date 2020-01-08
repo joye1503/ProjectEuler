@@ -24,8 +24,8 @@ long longMax(long a, long b);
 long longPow(long base, long power);
 int calculateGCD(long a, long b, long *result);
 int calculateLCM(long a, long b, long *result);
-int isPrime(long number, bool *prime);
-int isPrimeFallback(long number, bool *prime);
+int isPrime(long number, bool *primality);
+int isPrimeFallback(long number, bool *primality);
 int isPalindrome(long number, bool *palindrome);
 
 #endif

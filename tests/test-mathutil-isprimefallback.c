@@ -1,6 +1,6 @@
 /// @file
-/// Test Project Euler isPrime
-/// \test Test isPrime result
+/// Test Project Euler isPrimeFallback
+/// \test Test isPrimeFallback result
 #include <stdio.h>
 #include <stdbool.h>
 #include "utils.h"
@@ -11,7 +11,7 @@ int main(void) {
   bool prime;
 
   // Get primality
-  isPrime(a, &prime);
+  isPrimeFallback(a, &prime);
 
   // Check
   if (prime != trueResult)
@@ -25,7 +25,7 @@ int main(void) {
   a = 104731;
 
   // Get primality
-  isPrime(a, &prime);
+  isPrimeFallback(a, &prime);
 
   // Check
   if (prime != trueResult)

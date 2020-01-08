@@ -51,16 +51,16 @@ int calculateLCM(long a, long b, long *result) {
 /**
   @brief Check if number (long int) is prime in prime list
 
-  @param[in] number  number to check primality
-  @param[out] prime  boolian value, true if prime, othewise false
+  @param[in] number      number to check primality
+  @param[out] primality  boolian value, true if prime, othewise false
 
   @return  An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int isPrime(long number, bool *prime) {
+int isPrime(long number, bool *primality) {
   FILE *stream;
   char s[100];
-  long n = 0;
+  long prime = 1;
 
   // Open file
   stream = fopen("utils/primes.txt", "r");
@@ -68,28 +68,31 @@ int isPrime(long number, bool *prime) {
   // Fallback if no primes file
   if(stream == NULL) {
     // LCOV_EXCL_START
-    isPrimeFallback(number, prime);
+    isPrimeFallback(number, primality);
 
     return 0;
     // LCOV_EXCL_STOP
   }
 
   // Read prime list from file
+  long bound = floor(sqrt(number));
   while (fgets(s, sizeof(s), stream)) {
-     // Stop when found prime as big as number
-     n = strtol(s, NULL, 10);
-     if (n >= number)
-       break;
+    // Stop when found prime as big as sqrt(number)
+    prime = strtol(s, NULL, 10);
+    if (!(number % prime) || prime > bound)
+      break;
   }
 
   // Check for completion
-  if (n == number)
-    *prime = true;
-  else if (n > number)
-    *prime = false;
+  if (!(number % prime))
+    *primality = false;
+  else if (prime > bound)
+    *primality = true;
   else
-    // Fallback if number is larger than last prime
-    isPrimeFallback(number, prime);
+    // LCOV_EXCL_START
+    // Fallback if number is larger than square of last prime
+    isPrimeFallback(number, primality);
+  // LCOV_EXCL_STOP
 
   // Close
   fclose(stream);
@@ -100,19 +103,19 @@ int isPrime(long number, bool *prime) {
 /**
   @brief Check if number (long int) is prime by calculation
 
-  @param[in] number  number to check primality
-  @param[out] prime  boolian value, true if prime, othewise false
+  @param[in] number      number to check primality
+  @param[out] primality  boolian value, true if prime, othewise false
 
   @return  An error code: 0 - success, otherwise - failure
 **/
 // -----------------------------------------------------------------------------
-int isPrimeFallback(long number, bool *prime) {
+int isPrimeFallback(long number, bool *primality) {
   long bound = floor(sqrt((double)number));
 
   // Check if prime
   for (long i = bound; i > 1; i--) {
-    *prime = number % i;
-    if (!(*prime))
+    *primality = number % i;
+    if (!(*primality))
       break;
   }
 
