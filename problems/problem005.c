@@ -40,7 +40,6 @@ int problem005(int limit, long *lcm) {
 
   What is the smallest positive number that is evenly divisible by all of the
   numbers from 1 to 20?
-
 **/
 // -----------------------------------------------------------------------------
 int problem005CL(FILE *stream) {

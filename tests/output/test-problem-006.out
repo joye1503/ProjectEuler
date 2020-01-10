@@ -1,0 +1,12 @@
+    This code finds the difference between the square of a sum and
+    the sum of squares of numbers from 1 to [limit].
+
+      Enter limit:     The difference between the square of a sum and the sum of
+    of squares of numbers from 1 to 10: 2640
+
+    This code finds the difference between the square of a sum and
+    the sum of squares of numbers from 1 to [limit].
+
+      Enter limit:     The difference between the square of a sum and the sum of
+    of squares of numbers from 1 to 100: 25164150
+
