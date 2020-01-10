@@ -17,7 +17,6 @@
 // -----------------------------------------------------------------------------
 int problem007(int n, long *prime) {
   FILE *stream;
-  char s[100];
   int i = 0;
   long current = 1;
 
@@ -26,6 +25,8 @@ int problem007(int n, long *prime) {
 
   // Loop through list of primes
   if(stream != NULL) {
+    char s[100];
+
     // Loop for nth prime
     while (fgets(s, sizeof(s), stream)) {
       i++;
