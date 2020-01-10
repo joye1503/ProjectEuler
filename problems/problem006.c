@@ -10,8 +10,8 @@
   @brief Find the difference between the square of a sum and the sum of squares
            of a range of numbers from 1 to limit
 
-  @param[in] limit         upper limit of range to consider
-  @param[out] difference   difference between square of sum and sum of squares
+  @param[in] limit        upper limit of range to consider
+  @param[out] difference  difference between square of sum and sum of squares
 
   @return An error code: 0 - success, otherwise - failure
 **/
