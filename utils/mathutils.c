@@ -16,12 +16,11 @@
 **/
 // -----------------------------------------------------------------------------
 int calculateGCD(long a, long b, long *result) {
-  int ierr;
-
   // Compute gcd
   if (b == 0) {
     *result = a;
   } else {
+    int ierr;
     ierr = calculateGCD(b, a % b, result); ErrChk(ierr);
   }
 

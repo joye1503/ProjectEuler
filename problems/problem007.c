@@ -16,8 +16,6 @@
 **/
 // -----------------------------------------------------------------------------
 int problem007(int n, long *prime) {
-  int ierr;
-
   FILE *stream;
   int i = 0;
   long current = 0;
@@ -43,6 +41,8 @@ int problem007(int n, long *prime) {
 
   // Check numbers past last prime read in, if needed
   while (i < n) {
+    int ierr;
+
     // Iterate guess
     current++;
 

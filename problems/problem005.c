@@ -16,14 +16,13 @@
 **/
 // -----------------------------------------------------------------------------
 int problem005(int limit, long *lcm) {
-  int ierr;
-
   // Initalize
   *lcm = 1;
 
   // Calculate LCM
   //  Note: lcm([1, ..., limit]) = lcm(1, [2, ..., limit])
   for (long i = 2; i <= (long)limit; i++) {
+    int ierr;
     ierr = calculateLCM(*lcm, i, lcm); ErrChk(ierr);
   }
 

@@ -6,8 +6,6 @@
 // Driver
 // -----------------------------------------------------------------------------
 int main(void) {
-  int ierr;
-
   int menuOption = 0;
 
   printf("---------------------------------------------------------------\n"
@@ -19,6 +17,7 @@ int main(void) {
 
   // Loop until exit
   while (menuOption != 3) {
+    int ierr;
     // Prompt user
     ierr = getValidUserInt("  Enter a menu option (1-3): ", stdin, 1, 3,
                            &menuOption); ErrChk(ierr);

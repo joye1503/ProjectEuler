@@ -16,13 +16,13 @@
 **/
 // -----------------------------------------------------------------------------
 int problem003(long number, long *factor) {
-  int ierr;
-
   bool finished = false;
   long dividend = number;
 
   // Find factor
   while (!finished) {
+    int ierr;
+
     // Check for factorization completion
     ierr = isPrime(dividend, &finished); ErrChk(ierr);
     if (finished)
