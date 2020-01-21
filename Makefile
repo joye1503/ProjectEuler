@@ -77,11 +77,6 @@ utils.o     = $(utils.c:%.c=$(OBJDIR)/%.o)
 problems.c := $(sort $(wildcard problems/*.c))
 problems.o  = $(problems.c:%.c=$(OBJDIR)/%.o)
 
-# Tests
-tests.c    := $(sort $(wildcard tests/*.c))
-tests       = $(tests.c:tests/%.c=$(OBJDIR)/%)
-$(tests) : $(utils.o) $(problems.o)
-
 # Driver code
 euler.c    := euler.c
 euler.o     = $(euler.c:%.c=$(OBJDIR)/%.o)
@@ -90,6 +85,11 @@ euler.o     = $(euler.c:%.c=$(OBJDIR)/%.o)
 euler: $(euler.o) $(utils.o) $(problems.o)
 	$(call quiet,CC) -o $@ $^ $(CFLAGS)
 all: euler
+
+# Tests
+tests.c    := $(sort $(wildcard tests/*.c))
+tests       = $(tests.c:tests/%.c=$(OBJDIR)/%)
+$(tests) : $(utils.o) $(problems.o)
 
 # Testing
 run-%: $(OBJDIR)/%
