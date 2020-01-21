@@ -18,10 +18,10 @@
 int problem007(int n, long *prime) {
   FILE *stream;
   int i = 0;
-  long current = 1;
+  long current = 0;
 
   // Open file
-  stream = fopen("utils/primes.txt", "r");
+  stream = fopen("data/primes.txt", "r");
 
   // Loop through list of primes
   if(stream != NULL) {
@@ -82,8 +82,7 @@ int problem007CL(FILE *stream) {
   // Find lcm
   problem007(n, &prime);
 
-  printf("    The %dth prime is: %ld\n\n",
-         n, prime);
+  printf("    The %dth prime is: %ld\n\n", n, prime);
 
   return 0;
 };

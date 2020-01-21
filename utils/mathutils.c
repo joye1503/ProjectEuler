@@ -63,7 +63,7 @@ int isPrime(long number, bool *primality) {
   long prime = 1;
 
   // Open file
-  stream = fopen("utils/primes.txt", "r");
+  stream = fopen("data/primes.txt", "r");
 
   // Fallback if no primes file
   if(stream == NULL) {
