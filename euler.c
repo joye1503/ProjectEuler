@@ -6,6 +6,8 @@
 // Driver
 // -----------------------------------------------------------------------------
 int main(void) {
+  int ierr;
+
   int menuOption = 0;
 
   printf("---------------------------------------------------------------\n"
@@ -18,7 +20,8 @@ int main(void) {
   // Loop until exit
   while (menuOption != 3) {
     // Prompt user
-    getValidUserInt("  Enter a menu option (1-3): ", stdin, 1, 3, &menuOption);
+    ierr = getValidUserInt("  Enter a menu option (1-3): ", stdin, 1, 3,
+                           &menuOption); ErrChk(ierr);
 
     // Take selected action
     switch (menuOption) {
@@ -35,10 +38,10 @@ int main(void) {
 
       printf("---------------------------------------------------------------\n"
              "  Euler Problems 1-%d are avaliable\n", NUM_PROBLEMS);
-      getValidUserInt("  Select an Euler problem to solve: ", stdin, 1,
-                      NUM_PROBLEMS, &problemOption);
+      ierr = getValidUserInt("  Select an Euler problem to solve: ", stdin, 1,
+                      NUM_PROBLEMS, &problemOption); ErrChk(ierr);
 
-      (*problems[problemOption-1])(stdin);
+      ierr = (*problems[problemOption-1])(stdin); ErrChk(ierr);
     } break;
 
     default :

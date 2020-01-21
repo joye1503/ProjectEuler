@@ -6,6 +6,24 @@
 /// @{
 // -----------------------------------------------------------------------------
 /**
+  @brief Error handler that prints to stderr and exits
+**/
+// LCOV_EXCL_START
+int ErrorExit(const char *filename, int lineno, const char *func, int ecode,
+              const char *format, ...) {
+  va_list args;
+
+  fprintf(stderr, "%s:%d in %s(): ", filename, lineno, func);
+  va_start (args, format);
+  vfprintf(stderr, format, args);
+  va_end (args);
+  fprintf(stderr, "\n");
+  exit(ecode);
+  return ecode;
+}
+// LCOV_EXCL_STOP
+// -----------------------------------------------------------------------------
+/**
   @brief Get user input integer
 
   @param[in] userPrompt  text for user prompt

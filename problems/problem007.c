@@ -16,6 +16,8 @@
 **/
 // -----------------------------------------------------------------------------
 int problem007(int n, long *prime) {
+  int ierr;
+
   FILE *stream;
   int i = 0;
   long current = 0;
@@ -46,7 +48,7 @@ int problem007(int n, long *prime) {
 
     // Check primality
     bool primality;
-    isPrime(current, &primality);
+    ierr = isPrime(current, &primality); ErrChk(ierr);
     if (primality)
       i++;
   }
@@ -72,15 +74,18 @@ int problem007(int n, long *prime) {
 **/
 // -----------------------------------------------------------------------------
 int problem007CL(FILE *stream) {
+  int ierr;
+
   int n;
   long prime;
 
   // Get a and limit from user
   printf("    This code finds the [n]th prime.\n\n");
-  getValidUserInt("      Enter n: ", stream, 1, INT_MAX, &n);
+  ierr = getValidUserInt("      Enter n: ", stream, 1, INT_MAX, &n);
+  ErrChk(ierr);
 
   // Find lcm
-  problem007(n, &prime);
+  ierr = problem007(n, &prime); ErrChk(ierr);
 
   printf("    The %dth prime is: %ld\n\n", n, prime);
 

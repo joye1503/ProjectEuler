@@ -3,8 +3,19 @@
 #include <math.h>
 #include <stdio.h>
 #include <limits.h>
+#include <stdarg.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
+// -----------------------------------------------------------------------------
+// Error handling
+// -----------------------------------------------------------------------------
+
+#define ErrChk(ierr) do { if (ierr) return ierr; } while (0)
+#define Error(ecode, ...)                                     \
+  (ErrorExit(__FILE__, __LINE__, __func__, (ecode), __VA_ARGS__) ?: (ecode))
+int ErrorExit(const char *filename, int lineno, const char *func, int ecode,
+              const char *format, ...);
 
 // -----------------------------------------------------------------------------
 // Interface utilites

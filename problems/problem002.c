@@ -53,16 +53,18 @@ int problem002(long a, long limit, long *sum) {
 **/
 // -----------------------------------------------------------------------------
 int problem002CL(FILE *stream) {
+  int ierr;
+
   long a, limit, sum;
 
   // Get a and limit from user
   printf("    This code finds the sum of all Fibonacci numbers that are\n"
          "      multiples of [a] below [limit].\n\n");
-  getUserLong("      Enter a: ", stream, &a);
-  getUserLong("      Enter limit: ", stream, &limit);
+  ierr = getUserLong("      Enter a: ", stream, &a); ErrChk(ierr);
+  ierr = getUserLong("      Enter limit: ", stream, &limit); ErrChk(ierr);
 
   // Find sum of multiples
-  problem002(a, limit, &sum);
+  ierr = problem002(a, limit, &sum); ErrChk(ierr);
 
   printf("    Sum of Fibonacci numbers that are multiples of %ld below %ld: "
          "%ld\n\n", a, limit, sum);

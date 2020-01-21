@@ -16,13 +16,15 @@
 **/
 // -----------------------------------------------------------------------------
 int problem003(long number, long *factor) {
+  int ierr;
+
   bool finished = false;
   long dividend = number;
 
   // Find factor
   while (!finished) {
     // Check for factorization completion
-    isPrime(dividend, &finished);
+    ierr = isPrime(dividend, &finished); ErrChk(ierr);
     if (finished)
       break;
 
@@ -31,8 +33,9 @@ int problem003(long number, long *factor) {
     bool prime = false;
     for (long i = 2; i < bound; i++) {
       // Check for prime divisor
-      if (!(dividend % i))
-        isPrime(i, &prime);
+      if (!(dividend % i)) {
+        ierr = isPrime(i, &prime); ErrChk(ierr);
+      }
 
       // Update dividend and break
       if (prime) {
@@ -60,14 +63,16 @@ int problem003(long number, long *factor) {
 **/
 // -----------------------------------------------------------------------------
 int problem003CL(FILE *stream) {
+  int ierr;
+
   long number, factor;
 
   // Get a and limit from user
   printf("    This code finds the largest prime factor of a [number].\n\n");
-  getUserLong("      Enter number: ", stream, &number);
+  ierr = getUserLong("      Enter number: ", stream, &number); ErrChk(ierr);
 
   // Find sum of multiples
-  problem003(number, &factor);
+  ierr = problem003(number, &factor); ErrChk(ierr);
 
   printf("    The largest prime factor of %ld: %ld\n\n",
          number, factor);

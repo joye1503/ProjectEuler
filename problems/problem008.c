@@ -33,7 +33,7 @@ int problem008(int n, long *product) {
     fclose(stream);
   } else {
     // LCOV_EXCL_START
-    return 1;
+    return Error(1, "100digit file failed to load.", NULL);
     // LCOV_EXCL_STOP
   }
 
@@ -73,16 +73,18 @@ int problem008(int n, long *product) {
 **/
 // -----------------------------------------------------------------------------
 int problem008CL(FILE *stream) {
+  int ierr;
+
   int n;
   long product;
 
   // Get a and limit from user
   printf("    This code finds the greatest product of [n] adjacent digits in\n"
          "      the 1000 digit number in data/1000digit.txt\n\n");
-  getValidUserInt("      Enter n: ", stream, 1, 1000, &n);
+  ierr = getValidUserInt("      Enter n: ", stream, 1, 1000, &n); ErrChk(ierr);
 
   // Find lcm
-  problem008(n, &product);
+  ierr = problem008(n, &product); ErrChk(ierr);
 
   printf("    The greatest product of %d consecutive digits is: %ld\n\n",
          n, product);

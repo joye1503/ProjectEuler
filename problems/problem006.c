@@ -53,16 +53,19 @@ int problem006(int limit, long *difference) {
 **/
 // -----------------------------------------------------------------------------
 int problem006CL(FILE *stream) {
+  int ierr;
+
   int limit;
   long difference;
 
   // Get a and limit from user
   printf("    This code finds the difference between the square of a sum and\n"
          "    the sum of squares of numbers from 1 to [limit].\n\n");
-  getValidUserInt("      Enter limit: ", stream, 1, INT_MAX, &limit);
+  ierr = getValidUserInt("      Enter limit: ", stream, 1, INT_MAX, &limit);
+  ErrChk(ierr);
 
   // Find lcm
-  problem006(limit, &difference);
+  ierr = problem006(limit, &difference); ErrChk(ierr);
 
   printf("    The difference between the square of a sum and the sum of\n"
          "    of squares of numbers from 1 to %d: %ld\n\n",

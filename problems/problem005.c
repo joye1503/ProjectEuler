@@ -16,13 +16,16 @@
 **/
 // -----------------------------------------------------------------------------
 int problem005(int limit, long *lcm) {
+  int ierr;
+
   // Initalize
   *lcm = 1;
 
   // Calculate LCM
   //  Note: lcm([1, ..., limit]) = lcm(1, [2, ..., limit])
-  for (long i = 2; i <= (long)limit; i++)
-    calculateLCM(*lcm, i, lcm);
+  for (long i = 2; i <= (long)limit; i++) {
+    ierr = calculateLCM(*lcm, i, lcm); ErrChk(ierr);
+  }
 
   return 0;
 };
@@ -43,16 +46,19 @@ int problem005(int limit, long *lcm) {
 **/
 // -----------------------------------------------------------------------------
 int problem005CL(FILE *stream) {
+  int ierr;
+
   int limit;
   long lcm;
 
   // Get a and limit from user
   printf("    This code finds the least common multiple of numbers from 1 to\n"
          "    [limit].\n\n");
-  getValidUserInt("      Enter limit: ", stream, 1, INT_MAX, &limit);
+  ierr = getValidUserInt("      Enter limit: ", stream, 1, INT_MAX, &limit);
+  ErrChk(ierr);
 
   // Find lcm
-  problem005(limit, &lcm);
+  ierr = problem005(limit, &lcm); ErrChk(ierr);
 
   printf("    The least common mulitple of numbers from 1 to %d: %ld\n\n",
          limit, lcm);

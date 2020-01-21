@@ -48,17 +48,18 @@ int problem001(long a, long b, long limit, long *sum) {
 **/
 // -----------------------------------------------------------------------------
 int problem001CL(FILE *stream) {
+  int ierr;
   long a, b, limit, sum;
 
   // Get a, b, and limit from user
   printf("    This code finds the sum of all the multiples of [a] or [b]\n"
          "      below [limit].\n\n");
-  getUserLong("      Enter a: ", stream, &a);
-  getUserLong("      Enter b: ", stream, &b);
-  getUserLong("      Enter limit: ", stream, &limit);
+  ierr = getUserLong("      Enter a: ", stream, &a); ErrChk(ierr);
+  ierr = getUserLong("      Enter b: ", stream, &b); ErrChk(ierr);
+  ierr = getUserLong("      Enter limit: ", stream, &limit); ErrChk(ierr);
 
   // Find sum of multiples
-  problem001(a, b, limit, &sum);
+  ierr = problem001(a, b, limit, &sum); ErrChk(ierr);
 
   printf("    Sum of multiples of %ld or %ld below %ld: %ld\n\n",
          a, b, limit, sum);

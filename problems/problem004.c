@@ -17,6 +17,8 @@
 **/
 // -----------------------------------------------------------------------------
 int problem004(int digits, long *palindrome) {
+  int ierr;
+
   // Initalize
   *palindrome = -1;
 
@@ -30,7 +32,7 @@ int problem004(int digits, long *palindrome) {
     for (long second = upper; second >= lower; second--) {
       // Check for palindrome
       bool found = false;
-      isPalindrome(first * second, &found);
+      ierr = isPalindrome(first * second, &found); ErrChk(ierr);
 
       // Modify lower bound and update largest if palindrome
       if (found) {
@@ -59,16 +61,18 @@ int problem004(int digits, long *palindrome) {
 **/
 // -----------------------------------------------------------------------------
 int problem004CL(FILE *stream) {
+  int ierr;
+
   int number;
   long palindrome;
 
   // Get a and limit from user
   printf("    This code finds the largest palindrome which is a product of\n"
          "      [number] digit numbers.\n\n");
-  getUserInt("      Enter number: ", stream, &number);
+  ierr = getUserInt("      Enter number: ", stream, &number); ErrChk(ierr);
 
   // Find sum of multiples
-  problem004(number, &palindrome);
+  ierr = problem004(number, &palindrome); ErrChk(ierr);
 
   printf("    The largest palindrome product of %d digit numbers: %ld\n\n",
          number, palindrome);

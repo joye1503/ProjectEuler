@@ -16,11 +16,14 @@
 **/
 // -----------------------------------------------------------------------------
 int calculateGCD(long a, long b, long *result) {
+  int ierr;
+
   // Compute gcd
-  if (b == 0)
+  if (b == 0) {
     *result = a;
-  else
-    calculateGCD(b, a % b, result);
+  } else {
+    ierr = calculateGCD(b, a % b, result); ErrChk(ierr);
+  }
 
   return 0;
 };
@@ -36,9 +39,11 @@ int calculateGCD(long a, long b, long *result) {
 **/
 // -----------------------------------------------------------------------------
 int calculateLCM(long a, long b, long *result) {
+  int ierr;
+
   // Compute gcd
   long gcd;
-  calculateGCD(a, b, &gcd);
+  ierr = calculateGCD(a, b, &gcd); ErrChk(ierr);
 
   // Compute lcm
   long lcm = a * b / gcd;
@@ -58,6 +63,8 @@ int calculateLCM(long a, long b, long *result) {
 **/
 // -----------------------------------------------------------------------------
 int isPrime(long number, bool *primality) {
+  int ierr;
+
   FILE *stream;
   char s[100];
   long prime = 1;
@@ -68,7 +75,7 @@ int isPrime(long number, bool *primality) {
   // Fallback if no primes file
   if(stream == NULL) {
     // LCOV_EXCL_START
-    isPrimeFallback(number, primality);
+    ierr = isPrimeFallback(number, primality); ErrChk(ierr);
 
     return 0;
     // LCOV_EXCL_STOP
@@ -88,11 +95,12 @@ int isPrime(long number, bool *primality) {
     *primality = false;
   else if (prime > bound)
     *primality = true;
-  else
+  else {
     // LCOV_EXCL_START
     // Fallback if number is larger than square of last prime
-    isPrimeFallback(number, primality);
-  // LCOV_EXCL_STOP
+    ierr = isPrimeFallback(number, primality); ErrChk(ierr);
+    // LCOV_EXCL_STOP
+  }
 
   // Close
   fclose(stream);
