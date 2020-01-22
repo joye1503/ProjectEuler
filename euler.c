@@ -38,7 +38,7 @@ int main(void) {
       printf("---------------------------------------------------------------\n"
              "  Euler Problems 1-%d are avaliable\n", NUM_PROBLEMS);
       ierr = getValidUserInt("  Select an Euler problem to solve: ", stdin, 1,
-                      NUM_PROBLEMS, &problemOption); ErrChk(ierr);
+                             NUM_PROBLEMS, &problemOption); ErrChk(ierr);
 
       ierr = (*problems[problemOption-1])(stdin); ErrChk(ierr);
     } break;

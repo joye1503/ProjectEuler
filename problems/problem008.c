@@ -42,7 +42,7 @@ int problem008(int n, long *product) {
     // Find product
     long prod = 1;
     for (int j = 0; j < n; j++) {
-      int nextDigit = oneKdigits[i+j] - '0'; 
+      int nextDigit = oneKdigits[i+j] - '0';
       prod *= nextDigit;
     }
 
