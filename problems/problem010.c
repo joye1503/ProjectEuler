@@ -18,12 +18,7 @@
 // -----------------------------------------------------------------------------
 int problem010(int n, long *sum) {
   bool *primality;
-  long bound = floor((n - 1) / 2) + 1;
-
-  if (n < 3) {
-    *sum = 0;
-    return 0;
-  }
+  long bound = floor((n - 2) / 2) + 1;
 
   // Initalize array
   primality = (bool *)calloc(bound, sizeof(bool));
