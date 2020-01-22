@@ -26,9 +26,7 @@ int problem008(int n, long *product) {
   stream = fopen("data/1000digit.txt", "r");
 
   // Get number from file
-  if(stream != NULL) {
-    fgets(oneKdigits, sizeof(oneKdigits), stream);
-
+  if(stream != NULL && fgets(oneKdigits, sizeof(oneKdigits), stream) != NULL) {
     // Close
     fclose(stream);
   } else {
