@@ -50,7 +50,7 @@ int problem005CL(FILE *stream) {
   int limit;
   long lcm;
 
-  // Get a and limit from user
+  // Get limit from user
   printf("    This code finds the least common multiple of numbers from 1 to\n"
          "    [limit].\n\n");
   ierr = getValidUserInt("      Enter limit: ", stream, 1, INT_MAX, &limit);

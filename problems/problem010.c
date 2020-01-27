@@ -2,7 +2,7 @@
 #include <string.h>
 #include "utils.h"
 /// @file
-/// Implementation of Project Euler Problem 20
+/// Implementation of Project Euler Problem 10
 ///
 /// @addtogroup Problem
 /// @{
@@ -61,7 +61,7 @@ int problem010CL(FILE *stream) {
 
   long n, sum;
 
-  // Get a and limit from user
+  // Get limit from user
   printf("    This code finds the sum of all prime numbers below [n].\n\n");
   ierr = getValidUserLong("      Enter n: ", stream, 3, INT_MAX, &n);
   ErrChk(ierr);

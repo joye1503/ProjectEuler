@@ -79,7 +79,7 @@ int problem007CL(FILE *stream) {
   int n;
   long prime;
 
-  // Get a and limit from user
+  // Get n from user
   printf("    This code finds the [n]th prime.\n\n");
   ierr = getValidUserInt("      Enter n: ", stream, 1, INT_MAX, &n);
   ErrChk(ierr);

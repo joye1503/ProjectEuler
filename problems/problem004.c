@@ -66,7 +66,7 @@ int problem004CL(FILE *stream) {
   int number;
   long palindrome;
 
-  // Get a and limit from user
+  // Get number of digits from user
   printf("    This code finds the largest palindrome which is a product of\n"
          "      [number] digit numbers.\n\n");
   ierr = getUserInt("      Enter number: ", stream, &number); ErrChk(ierr);

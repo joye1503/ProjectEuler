@@ -2,7 +2,7 @@
 #define EULER_H
 #include <math.h>
 
-#define NUM_PROBLEMS 10
+#define NUM_PROBLEMS 11
 
 // -----------------------------------------------------------------------------
 // Solution code
@@ -17,13 +17,15 @@ int problem007(int n, long *prime);
 int problem008(int n, long *product);
 int problem009(int sum, long *product);
 int problem010(long limit, long *sum);
+int problem011(int n, long *product);
 
 // -----------------------------------------------------------------------------
 // Command line interfaces
 // -----------------------------------------------------------------------------
 typedef int funcPtr(FILE *stream);
 funcPtr problem001CL, problem002CL, problem003CL, problem004CL, problem005CL,
-        problem006CL, problem007CL, problem008CL, problem009CL, problem010CL;
+        problem006CL, problem007CL, problem008CL, problem009CL, problem010CL,
+        problem011CL;
 
 funcPtr *problems[NUM_PROBLEMS] = {
   problem001CL,
@@ -35,7 +37,8 @@ funcPtr *problems[NUM_PROBLEMS] = {
   problem007CL,
   problem008CL,
   problem009CL,
-  problem010CL
+  problem010CL,
+  problem011CL
 };
 
 #endif

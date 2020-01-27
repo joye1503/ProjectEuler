@@ -60,7 +60,7 @@ int problem009CL(FILE *stream) {
   int n;
   long product;
 
-  // Get a and limit from user
+  // Get sum from user
   printf("    This code finds the product of a Pythagorean triplet that sums\n"
          "      to [n].\n\n");
   ierr = getValidUserInt("      Enter n: ", stream, 1, INT_MAX, &n);

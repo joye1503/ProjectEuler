@@ -67,7 +67,7 @@ int problem003CL(FILE *stream) {
 
   long number, factor;
 
-  // Get a and limit from user
+  // Get number from user
   printf("    This code finds the largest prime factor of a [number].\n\n");
   ierr = getUserLong("      Enter number: ", stream, &number); ErrChk(ierr);
 

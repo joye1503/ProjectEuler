@@ -76,7 +76,7 @@ int problem008CL(FILE *stream) {
   int n;
   long product;
 
-  // Get a and limit from user
+  // Get number of digits from user
   printf("    This code finds the greatest product of [n] adjacent digits in\n"
          "      the 1000 digit number in data/1000digit.txt\n\n");
   ierr = getValidUserInt("      Enter n: ", stream, 1, 1000, &n); ErrChk(ierr);

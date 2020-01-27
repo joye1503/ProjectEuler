@@ -58,7 +58,7 @@ int problem006CL(FILE *stream) {
   int limit;
   long difference;
 
-  // Get a and limit from user
+  // Get limit from user
   printf("    This code finds the difference between the square of a sum and\n"
          "    the sum of squares of numbers from 1 to [limit].\n\n");
   ierr = getValidUserInt("      Enter limit: ", stream, 1, INT_MAX, &limit);
