@@ -6,5 +6,5 @@
     This code finds the sum of all Fibonacci numbers that are
       multiples of [a] below [limit].
 
-      Enter a:       Enter limit:     Sum of Fibonacci numbers that are multiples of 2 below 4000000: 4613732
+      Enter a:       Enter limit:     Sum of Fibonacci numbers that are multiples of 2 below 2000000: 1089154
 

@@ -6,5 +6,5 @@
     This code finds the sum of all the multiples of [a] or [b]
       below [limit].
 
-      Enter a:       Enter b:       Enter limit:     Sum of multiples of 3 or 5 below 1000: 233168
+      Enter a:       Enter b:       Enter limit:     Sum of multiples of 3 or 5 below 500: 57918
 

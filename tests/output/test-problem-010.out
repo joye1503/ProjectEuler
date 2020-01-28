@@ -4,5 +4,5 @@
 
     This code finds the sum of all prime numbers below [n].
 
-      Enter n:     The sum of all prime numbers below 2000000: 142913828922
+      Enter n:     The sum of all prime numbers below 1000000: 37550402023
 

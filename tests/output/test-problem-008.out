@@ -6,5 +6,5 @@
     This code finds the greatest product of [n] adjacent digits in
       the 1000 digit number in data/1000digit.txt
 
-      Enter n:     The greatest product of 13 consecutive digits is: 23514624000
+      Enter n:     The greatest product of 12 consecutive digits is: 4702924800
 

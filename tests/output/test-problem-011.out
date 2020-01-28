@@ -1,5 +1,5 @@
     This code finds the largest product of [n] adjacent entries in
       grid of numbers in data/grid.txt.
 
-      Enter n:     The greatest product of 4 adjacent entries: 70600674
+      Enter n:     The greatest product of 3 adjacent entries: 811502
 
