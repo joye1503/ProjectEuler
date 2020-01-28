@@ -1,4 +1,4 @@
-# Project Euler Solutions
+# Project Euler Code
 
 [![Build Status](https://travis-ci.com/jeremylt/ProjectEuler.svg?branch=master)](https://travis-ci.com/jeremylt/ProjectEuler)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
