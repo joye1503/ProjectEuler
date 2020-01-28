@@ -111,7 +111,7 @@ style:
 CLANG_TIDY ?= clang-tidy
 allfiles.c := euler.c $(problems.c) $(utils.c) $(tests.c)
 %.c.tidy : %.c
-	$(CLANG_TIDY) $^ -- $(CPPFLAGS) --std=c99 -I$(INCDIR)
+	$(CLANG_TIDY) $^ -- $(CFLAGS) --std=c99 -I$(INCDIR)
 
 tidy : $(allfiles.c:%=%.tidy)
 
