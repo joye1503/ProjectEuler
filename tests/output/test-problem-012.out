@@ -1,0 +1,10 @@
+    This code finds the first triangular number with more than [n]
+      divisors.
+
+      Enter n:     The first triangular number with more than 5 divisors: 28
+
+    This code finds the first triangular number with more than [n]
+      divisors.
+
+      Enter n:     The first triangular number with more than 500 divisors: 76576500
+
