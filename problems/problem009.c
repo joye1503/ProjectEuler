@@ -66,7 +66,7 @@ int problem009CL(FILE *stream) {
   ierr = getValidUserInt("      Enter n: ", stream, 1, INT_MAX, &n);
   ErrChk(ierr);
 
-  // Find lcm
+  // Find product
   ierr = problem009(n, &product); ErrChk(ierr);
 
   if (product) {

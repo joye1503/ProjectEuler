@@ -64,7 +64,7 @@ int problem006CL(FILE *stream) {
   ierr = getValidUserInt("      Enter limit: ", stream, 1, INT_MAX, &limit);
   ErrChk(ierr);
 
-  // Find lcm
+  // Find difference
   ierr = problem006(limit, &difference); ErrChk(ierr);
 
   printf("    The difference between the square of a sum and the sum of\n"

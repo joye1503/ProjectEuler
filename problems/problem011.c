@@ -93,7 +93,7 @@ int problem011CL(FILE *stream) {
          "      grid of numbers in data/grid.txt.\n\n");
   ierr = getValidUserInt("      Enter n: ", stream, 1, 20, &n); ErrChk(ierr);
 
-  // Find lcm
+  // Find product
   ierr = problem011(n, &product); ErrChk(ierr);
 
   printf("    The greatest product of %d adjacent entries: %ld\n\n",

@@ -81,7 +81,7 @@ int problem008CL(FILE *stream) {
          "      the 1000 digit number in data/1000digit.txt\n\n");
   ierr = getValidUserInt("      Enter n: ", stream, 1, 1000, &n); ErrChk(ierr);
 
-  // Find lcm
+  // Find product
   ierr = problem008(n, &product); ErrChk(ierr);
 
   printf("    The greatest product of %d consecutive digits is: %ld\n\n",

@@ -66,7 +66,7 @@ int problem010CL(FILE *stream) {
   ierr = getValidUserLong("      Enter n: ", stream, 3, INT_MAX, &n);
   ErrChk(ierr);
 
-  // Find lcm
+  // Find sum
   ierr = problem010(n, &sum); ErrChk(ierr);
 
   printf("    The sum of all prime numbers below %ld: %ld\n\n",

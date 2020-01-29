@@ -84,7 +84,7 @@ int problem007CL(FILE *stream) {
   ierr = getValidUserInt("      Enter n: ", stream, 1, INT_MAX, &n);
   ErrChk(ierr);
 
-  // Find lcm
+  // Find prime
   ierr = problem007(n, &prime); ErrChk(ierr);
 
   printf("    The %dth prime is: %ld\n\n", n, prime);

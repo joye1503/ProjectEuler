@@ -91,13 +91,13 @@ int problem012CL(FILE *stream) {
   int n;
   long triangular;
 
-  // Get number adjacent from user
+  // Get number of divisors from user
   printf("    This code finds the first triangular number with more than [n]\n"
          "      divisors.\n\n");
   ierr = getValidUserInt("      Enter n: ", stream, 1, INT_MAX, &n);
   ErrChk(ierr);
 
-  // Find lcm
+  // Find triangular number
   ierr = problem012(n, &triangular); ErrChk(ierr);
 
   printf("    The first triangular number with more than %d divisors: %ld\n\n",
