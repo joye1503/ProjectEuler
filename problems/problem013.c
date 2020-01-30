@@ -49,7 +49,16 @@ int problem013(int n, long *digits) {
     int i = 50;
     while (remainder != 0) {
       if (i == numDigits) {
-        sum = (int *)realloc(sum, (numDigits+1)*sizeof(int));
+        int *temp = NULL;
+        temp = (int *)realloc(sum, (numDigits+1)*sizeof(int));
+        if (temp != NULL) {
+          sum = temp;
+        } else {
+          // LCOV_EXCL_START
+          free(sum);
+          return Error(1, "Array reallocation failure.", NULL);
+          // LCOV_EXCL_STOP
+        }
         sum[numDigits] = 0;
         numDigits++;
       }
