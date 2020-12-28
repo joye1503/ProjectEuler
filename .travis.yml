@@ -2,11 +2,14 @@ language: c
 
 arch:
   - amd64
-  - ppc64le
-  - s390x
   - arm64
+  - arm64-graviton2
 
 os: linux
+
+virt: lxd
+
+group: edge
 
 dist: bionic
 
